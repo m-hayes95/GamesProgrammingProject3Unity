@@ -1,7 +1,169 @@
 fileFormatVersion: 2
 guid: 0a2b44d6e6f9c69439ae7f48f48ce728
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7687861505931385654
+    second: skelleton sheet_0
+  - first:
+      213: 1134907080161271847
+    second: skelleton sheet_1
+  - first:
+      213: 1456966433988583667
+    second: skelleton sheet_2
+  - first:
+      213: 8087995399195083529
+    second: skelleton sheet_3
+  - first:
+      213: 4299054233473004716
+    second: skelleton sheet_4
+  - first:
+      213: 372432525896971884
+    second: skelleton sheet_5
+  - first:
+      213: -6259663465791832162
+    second: skelleton sheet_6
+  - first:
+      213: 1391890112473439490
+    second: skelleton sheet_7
+  - first:
+      213: -149359513406695097
+    second: skelleton sheet_8
+  - first:
+      213: 9067462253188444280
+    second: skelleton sheet_9
+  - first:
+      213: 8490970462101612739
+    second: skelleton sheet_10
+  - first:
+      213: -2495495643397393747
+    second: skelleton sheet_11
+  - first:
+      213: -6616797485993547420
+    second: skelleton sheet_12
+  - first:
+      213: 2754392875461891144
+    second: skelleton sheet_13
+  - first:
+      213: 705014209725464541
+    second: skelleton sheet_14
+  - first:
+      213: -8012914376940968884
+    second: skelleton sheet_15
+  - first:
+      213: 2110193917109227825
+    second: skelleton sheet_16
+  - first:
+      213: 5060741641794929597
+    second: skelleton sheet_17
+  - first:
+      213: -1963103010104773564
+    second: skelleton sheet_18
+  - first:
+      213: -2757444033534857449
+    second: skelleton sheet_19
+  - first:
+      213: -3600192945347487581
+    second: skelleton sheet_20
+  - first:
+      213: 8693308261962379573
+    second: skelleton sheet_21
+  - first:
+      213: -4767190400180187590
+    second: skelleton sheet_22
+  - first:
+      213: -4833342251751597433
+    second: skelleton sheet_23
+  - first:
+      213: 6016661710010637179
+    second: skelleton sheet_24
+  - first:
+      213: -6724157062950835561
+    second: skelleton sheet_25
+  - first:
+      213: 3642722879642999165
+    second: skelleton sheet_26
+  - first:
+      213: -1954795292824303312
+    second: skelleton sheet_27
+  - first:
+      213: 7304396556621125437
+    second: skelleton sheet_28
+  - first:
+      213: 2340390447646915377
+    second: skelleton sheet_29
+  - first:
+      213: 163780265479857819
+    second: skelleton sheet_30
+  - first:
+      213: -4603963310824509729
+    second: skelleton sheet_31
+  - first:
+      213: -6443594948501716778
+    second: skelleton sheet_32
+  - first:
+      213: 1795882428370403191
+    second: skelleton sheet_33
+  - first:
+      213: -61214622906791979
+    second: skelleton sheet_34
+  - first:
+      213: 3420624668934006259
+    second: skelleton sheet_35
+  - first:
+      213: -8425926439287624312
+    second: skelleton sheet_36
+  - first:
+      213: -8937917982811069138
+    second: skelleton sheet_37
+  - first:
+      213: 3543919797442645504
+    second: skelleton sheet_38
+  - first:
+      213: 8831904776218567423
+    second: skelleton sheet_39
+  - first:
+      213: 4505750214198033035
+    second: skelleton sheet_40
+  - first:
+      213: -8835707489961121654
+    second: skelleton sheet_41
+  - first:
+      213: 2421655010566234441
+    second: skelleton sheet_42
+  - first:
+      213: 2984745153231060441
+    second: skelleton sheet_43
+  - first:
+      213: -7074977980139620512
+    second: skelleton sheet_44
+  - first:
+      213: 8343162879024791061
+    second: skelleton sheet_45
+  - first:
+      213: 2259904139583012605
+    second: skelleton sheet_46
+  - first:
+      213: -2164089812052156353
+    second: skelleton sheet_47
+  - first:
+      213: -3609413158182180438
+    second: skelleton sheet_48
+  - first:
+      213: 4023665237854288902
+    second: skelleton sheet_49
+  - first:
+      213: 5454047307671140740
+    second: skelleton sheet_50
+  - first:
+      213: 1303436674785489021
+    second: skelleton sheet_51
+  - first:
+      213: -7449411555969800523
+    second: skelleton sheet_52
+  - first:
+      213: 6753974673170237738
+    second: skelleton sheet_53
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -65,7 +227,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -77,7 +239,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -89,7 +251,1141 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: skelleton sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1050
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac46f8041ba3f4590800000000000000
+      internalID: -7687861505931385654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_1
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1050
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 720a616f9ffffbf00800000000000000
+      internalID: 1134907080161271847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_2
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1050
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0ae8b904f283410800000000000000
+      internalID: 1456966433988583667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1050
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903440aa6f45e3070800000000000000
+      internalID: 8087995399195083529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1050
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca43c484c0f49ab30800000000000000
+      internalID: 4299054233473004716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1050
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66f3e8b8652b2500800000000000000
+      internalID: 372432525896971884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1050
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9fbcf33e353129a0800000000000000
+      internalID: -6259663465791832162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 1050
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d9b58ceacf05310800000000000000
+      internalID: 1391890112473439490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1050
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749919b505e5dedf0800000000000000
+      internalID: -149359513406695097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8707f87b0e816dd70800000000000000
+      internalID: 9067462253188444280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_10
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 840
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8a6efe5acf5d570800000000000000
+      internalID: 8490970462101612739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_11
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 840
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da273cc1fe73e5dd0800000000000000
+      internalID: -2495495643397393747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 840
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46928a86eb96c24a0800000000000000
+      internalID: -6616797485993547420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 840
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844d5c11ab1993620800000000000000
+      internalID: 2754392875461891144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 840
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddff94c30b6b8c900800000000000000
+      internalID: 705014209725464541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 840
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4420d214d86cc090800000000000000
+      internalID: -8012914376940968884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 840
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1315c74ff2ae84d10800000000000000
+      internalID: 2110193917109227825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 840
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3c633d5bd5b3640800000000000000
+      internalID: 5060741641794929597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 630
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44474399638a1c4e0800000000000000
+      internalID: -1963103010104773564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_19
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 630
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f6225d2479bb9d0800000000000000
+      internalID: -2757444033534857449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_20
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 630
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a812b1479b890ec0800000000000000
+      internalID: -3600192945347487581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 630
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5317c3d1ec5d4a870800000000000000
+      internalID: 8693308261962379573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 630
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e8b94b69987ddb0800000000000000
+      internalID: -4767190400180187590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 630
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a957684d48cecb0800000000000000
+      internalID: -4833342251751597433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_24
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 630
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7bd0e692f97f7350800000000000000
+      internalID: 6016661710010637179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_25
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 630
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79aa1e007cefea2a0800000000000000
+      internalID: -6724157062950835561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_26
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 630
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d791f48b82d8d8230800000000000000
+      internalID: 3642722879642999165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0390a92c90c2fd4e0800000000000000
+      internalID: -1954795292824303312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_28
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 420
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d371df7c7fd6e5560800000000000000
+      internalID: 7304396556621125437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_29
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 420
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b36b356bcba7020800000000000000
+      internalID: 2340390447646915377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 420
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b966521a84dd54200800000000000000
+      internalID: 163780265479857819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 420
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdeaf5bf2cf6b10c0800000000000000
+      internalID: -4603963310824509729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 420
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0cd02b880c396a0800000000000000
+      internalID: -6443594948501716778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_33
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 420
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f3269bd814ce810800000000000000
+      internalID: 1795882428370403191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_34
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 420
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7c492ff95862ff0800000000000000
+      internalID: -61214622906791979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_35
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 420
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f5efbd5300887f20800000000000000
+      internalID: 3420624668934006259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d60b2cb88111b80800000000000000
+      internalID: -8425926439287624312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_37
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 210
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2568f223f226f380800000000000000
+      internalID: -8937917982811069138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_38
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 210
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e0b0f77488e2130800000000000000
+      internalID: 3543919797442645504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 210
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2659cb99a319a70800000000000000
+      internalID: 8831904776218567423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 210
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8af9e382f3a78e30800000000000000
+      internalID: 4505750214198033035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 210
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88eb99f9d2416580800000000000000
+      internalID: -8835707489961121654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_42
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 210
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9416851d6627b9120800000000000000
+      internalID: 2421655010566234441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_43
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 210
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddf76b27e1fb6920800000000000000
+      internalID: 2984745153231060441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_44
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 210
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067311c0301a0dd90800000000000000
+      internalID: -7074977980139620512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e7f7b3f6ed8c370800000000000000
+      internalID: 8343162879024791061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_46
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfeb74a67dacc5f10800000000000000
+      internalID: 2259904139583012605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_47
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30e69228cb97f1e0800000000000000
+      internalID: -2164089812052156353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa92eea2bd9c8edc0800000000000000
+      internalID: -3609413158182180438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c746d273ee6d730800000000000000
+      internalID: 4023665237854288902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 0
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489f9e9212ba0bb40800000000000000
+      internalID: 5454047307671140740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_51
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d703ec3ffbcb61210800000000000000
+      internalID: 1303436674785489021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_52
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 0
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b6eab498af5e9890800000000000000
+      internalID: -7449411555969800523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skelleton sheet_53
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 350
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a290c406e20fabd50800000000000000
+      internalID: 6753974673170237738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
