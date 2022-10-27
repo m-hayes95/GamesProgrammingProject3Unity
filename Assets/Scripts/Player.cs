@@ -18,15 +18,16 @@ public class Player : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        if (h == 0)
+        //if (h == 0)
         {
             //Idle
-            myAnimator.SetBool(“IsRunning?”, false);
-            mySprites.transform.localScale = new Vector3(1, 1, 1);
-        } else
+            //myAnimator.SetBool(“IsRunning?”, false);
+            //mySprites.transform.localScale = new Vector3(1, 1, 1);
+        } //else
         {
             //Moving right
             //myAnimator.SetBool(“name of bool used in animator controller”, true);
-            mySprites.transform.localScale = new Vector3(-1, 1, 1);
+            //mySprites.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
+}
