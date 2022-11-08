@@ -8,12 +8,14 @@ public class Player : MonoBehaviour
     public GameObject mySprites;
     public float speed;
     public float health;
+    public float damageFromEnemy;
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
         speed = 10f;
         health = 10f;
+        damageFromEnemy = 3f;
     }
 
     // Update is called once per frame

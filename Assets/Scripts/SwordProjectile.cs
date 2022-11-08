@@ -7,12 +7,14 @@ public class SwordProjectile : MonoBehaviour
     public float projectileSpeed;
     public Rigidbody2D projectile;
     public float projectileThrust;
+    public float damage;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         //projectileSpeed = 1000f;
-        projectileThrust = 100f;
+        projectileThrust = 1000f;
         //projectile = GetComponent<Rigidbody2D>();
         //projectile.AddForce(projectileThrust, 0, 0, ForceMode.Impulse);
         
@@ -41,5 +43,22 @@ public class SwordProjectile : MonoBehaviour
         //projectile.AddForce(transform.forward * projectileThrust);
         //Use Vector 2 to make it work with 2d
         projectileClone.AddRelativeForce(Vector2.left * projectileThrust);
+        
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collisionGameObject = collision.gameObject;
+
+        if (collisionGameObject.name != "Player")
+        {
+            if (collisionGameObject.GetComponent<EnemyHealth>() != null)
+            {
+                collisionGameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
+            Destroy(this);
+        }
+    }
+
+
 }
