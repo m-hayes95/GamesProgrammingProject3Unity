@@ -315,6 +315,7 @@ MonoBehaviour:
   projectileSpeed: 0
   projectile: {fileID: 671802242}
   projectileThrust: 1000
+  damage: 0
 --- !u!23 &227316795
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -635,6 +636,7 @@ MonoBehaviour:
   projectileSpeed: 0
   projectile: {fileID: 671802242}
   projectileThrust: 1000
+  damage: 0
 --- !u!23 &747972762
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -792,24 +794,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796597217}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1082070521 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1908461914810836943, guid: aefae8f11f39d46449b783a1928e2d39, type: 3}
-  m_PrefabInstance: {fileID: 2130810961}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1082070522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082070521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95cdd6d519d3d524386dea898e0b8254, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
 --- !u!1 &1095716417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1058,7 @@ MonoBehaviour:
   projectileSpeed: 0
   projectile: {fileID: 671802242}
   projectileThrust: 1000
+  damage: 0
 --- !u!23 &1396276138
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1264,6 +1249,7 @@ MonoBehaviour:
   projectileSpeed: 0
   projectile: {fileID: 671802242}
   projectileThrust: 1000
+  damage: 5
 --- !u!23 &1555950906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1780,6 +1766,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1082070522, guid: aefae8f11f39d46449b783a1928e2d39, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1908461914810836931, guid: aefae8f11f39d46449b783a1928e2d39, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1822,14 +1812,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1908461914810836931, guid: aefae8f11f39d46449b783a1928e2d39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1908461914810836942, guid: aefae8f11f39d46449b783a1928e2d39, type: 3}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1908461914810836942, guid: aefae8f11f39d46449b783a1928e2d39, type: 3}
-      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1908461914810836943, guid: aefae8f11f39d46449b783a1928e2d39, type: 3}
