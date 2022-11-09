@@ -6,15 +6,20 @@ public class Player : MonoBehaviour
 {
     public Animator myAnimator;
     public GameObject mySprites;
+    public float maxHealth;
     public float speed;
     public float health;
     public float damageFromEnemy;
+    public int companionsCollected;
+    public int playerPower;
+
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
         speed = 10f;
-        health = 10f;
+        maxHealth = 10f;
+        health = maxHealth;
         damageFromEnemy = 3f;
     }
 
@@ -47,8 +52,22 @@ public class Player : MonoBehaviour
         Debug.Log("Collision with" + collision.gameObject.name);
         if (collision.gameObject.CompareTag("enemy"))
         {
-            //Player Takes Damage
+            //Player Takes Damage on collision
             Debug.Log("Player Takes Damage");
+            health -= damageFromEnemy;
+
+            //Destroy Player on 0 or less health
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
+    }
+
+    public void CollectedCompanion(int companionsPickedUp)
+    {
+        //when collected companion event is triggered add one to companions collected and Player power level
+        companionsCollected += companionsPickedUp;
+        playerPower += 1;
     }
 }

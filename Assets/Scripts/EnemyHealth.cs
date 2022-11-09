@@ -4,39 +4,28 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float maxHealth;
-    private float hp;
+    public float enemyMaxHealth = 10f;
+    private float enemyHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         //Enemies staring HP
-
-        hp = maxHealth;
+        enemyHealth = enemyMaxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damageAmount)
     {
         //apply damage to enemy health
         Debug.Log("Enemy Took Damage");
-        hp -= damage;
+        enemyHealth -= damageAmount;
 
-        //if HP is equal or less than 0, call the die funciton
-        if(hp <= 0f)
+        //if HP is equal or less than 0, destroy enemy game object
+        if(enemyHealth <= 0f)
         {
-            Die();
+            Destroy(gameObject);
         }
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
     }
 
 }

@@ -48,16 +48,13 @@ public class SwordProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject collisionGameObject = collision.gameObject;
-
-        if (collisionGameObject.name != "Player")
+        if (collision.gameObject.GetComponent<EnemyHealth>() != null)
         {
-            if (collisionGameObject.GetComponent<EnemyHealth>() != null)
-            {
-                collisionGameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
-            }
-            Destroy(this);
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
+        Destroy(gameObject);
+
+       
     }
 
 
