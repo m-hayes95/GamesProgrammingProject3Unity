@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 152617739}
   - component: {fileID: 152617738}
   - component: {fileID: 152617737}
+  - component: {fileID: 152617740}
   m_Layer: 5
   m_Name: EnemyCanvas
   m_TagString: Untagged
@@ -491,6 +492,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &152617740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152617735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afa9de2a94e60a4ea0cbe773898a571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 1710569927}
+  low: {r: 1, g: 0, b: 0, a: 0}
+  high: {r: 0.061599493, g: 1, b: 0, a: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &227316792
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,9 +872,9 @@ GameObject:
   m_Component:
   - component: {fileID: 711910607}
   - component: {fileID: 711910606}
+  - component: {fileID: 711910609}
   - component: {fileID: 711910605}
   - component: {fileID: 711910608}
-  - component: {fileID: 711910609}
   - component: {fileID: 711910610}
   m_Layer: 0
   m_Name: Enemy
@@ -962,6 +979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMaxHealth: 10
+  healthBar: {fileID: 152617740}
 --- !u!50 &711910609
 Rigidbody2D:
   serializedVersion: 4
