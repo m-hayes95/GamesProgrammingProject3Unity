@@ -6,12 +6,16 @@ public class EnemyHealth : MonoBehaviour
 {
     public float enemyMaxHealth = 10f;
     private float enemyHealth;
+    //Referencing Enemy health bar class
+    public EnemyHealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         //Enemies staring HP
         enemyHealth = enemyMaxHealth;
+        //Set health bar on enemies
+        healthBar.SetHealth(enemyHealth, enemyMaxHealth);
     }
 
 

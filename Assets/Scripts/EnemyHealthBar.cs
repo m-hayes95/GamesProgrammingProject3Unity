@@ -13,12 +13,18 @@ public class EnemyHealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //place health bar above enemy with offset
         healthSlider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offset);
     }
 
     public void SetHealth(float health, float maxHealth)
     {
+        //Only show health bar when enemy takes damage
         healthSlider.gameObject.SetActive(health < maxHealth);
+        //Set health slider variable values
         healthSlider.value = health;
+        healthSlider.maxValue = maxHealth;
+        //Set colour of health bar, normalized value provides percentage between the two colours
+        healthSlider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, healthSlider.normalizedValue);
     }
 }
