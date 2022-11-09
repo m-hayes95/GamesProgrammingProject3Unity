@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float enemyMaxHealth = 10f;
+    private float enemyMaxHealth = 10f;
     private float enemyHealth;
     //Referencing Enemy health bar class
     public EnemyHealthBar healthBar;

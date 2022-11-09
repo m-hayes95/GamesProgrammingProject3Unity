@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SwordProjectile : MonoBehaviour
 {
-    public float projectileSpeed;
+    //public float projectileSpeed;
     public Rigidbody2D projectile;
-    public float projectileThrust;
+    private float projectileThrust;
     public float damage;
     
 
@@ -30,7 +30,7 @@ public class SwordProjectile : MonoBehaviour
         }
     }
 
-    void Fire()
+    private void Fire()
     {
         //Fires Sword projectile clone game object
         Rigidbody2D projectileClone = (Rigidbody2D)Instantiate(projectile, transform.position, transform.rotation);

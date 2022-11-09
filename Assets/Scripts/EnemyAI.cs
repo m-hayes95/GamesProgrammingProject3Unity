@@ -43,10 +43,10 @@ public class EnemyAI : MonoBehaviour
             //transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         //on tick, execute the face function below
-        Face();
+        ChasePlayer();
     }
 
-    public void Face()
+    private void ChasePlayer()
     {
         //on the x axis check if enemy is in front or behind player
         //on the y axis check if enemy is in above or below player
@@ -77,7 +77,7 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    public void MoveRight(float backwards)
+    private void MoveRight(float backwards)
     {
         //clamp backwards value to either -1 of 1 to preventing putting in higher / lower numbers
         backwards = Mathf.Clamp(backwards, -1, 1);
@@ -89,7 +89,7 @@ public class EnemyAI : MonoBehaviour
         //sprite variable name.transform.localScale = new Vector3(backwards, 1, 1);
     }
 
-    public void MoveUp(float upwards)
+    private void MoveUp(float upwards)
     {
         //clamp backwards value to either -1 of 1 to preventing putting in higher / lower numbers
         upwards = Mathf.Clamp(upwards, -1, 1);

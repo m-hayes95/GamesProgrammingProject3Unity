@@ -6,10 +6,10 @@ public class Player : MonoBehaviour
 {
     public Animator myAnimator;
     public GameObject mySprites;
-    public float maxHealth;
+    private float maxHealth;
     public float speed;
-    public float health;
-    public float damageFromEnemy;
+    private float health;
+    private float damageFromEnemy;
     public int companionsCollected;
     public int playerPower;
 
