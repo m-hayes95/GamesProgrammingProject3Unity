@@ -6,6 +6,9 @@ TagManager:
   tags:
   - enemy
   - sword_projectile
+  - CombatZone
+  - Enemy
+  - SwordProjectile
   layers:
   - Default
   - TransparentFX
