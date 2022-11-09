@@ -24,9 +24,18 @@ public class EnemyAI : MonoBehaviour
         if (volumeToMonitor.playerInsideVolume == true)
         {
             //Enemy to look at player
-            transform.LookAt(player.transform.position);
+            //transform.LookAt(player.transform.position);
             //Enemy to chase player
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            //transform.Translate(Vector2.right * speed * Time.deltaTime);
+
+            //2D version of transform.LookAt(player.transform.position)
+            //Look at the player position
+            Quaternion rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.TransformDirection(Vector3.up));
+            transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+
+            //2D version of transform.Translate(Vector3.forward)
+            //move right ('forward along X axis 1)
+            transform.Translate(speed * Time.deltaTime, 0, 0);
         }
     }
 }
