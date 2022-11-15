@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
     {
         //when collected companion event is triggered add one to companions collected and Player power level
         companionsCollected += companionsPickedUp;
+        Debug.Log("Player Power Increased By 1");
         playerPower += 1;
     }
 }

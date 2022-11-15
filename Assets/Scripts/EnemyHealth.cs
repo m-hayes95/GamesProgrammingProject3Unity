@@ -22,8 +22,11 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         //apply damage to enemy health
-        Debug.Log("Enemy Took Damage");
-        enemyHealth -= damageAmount;
+        if (Input.GetButtonDown("Fire3"))
+        {
+            Debug.Log("Enemy Took Damage");
+            enemyHealth -= damageAmount;
+        }
 
         //if HP is equal or less than 0, destroy enemy game object
         if(enemyHealth <= 0f)

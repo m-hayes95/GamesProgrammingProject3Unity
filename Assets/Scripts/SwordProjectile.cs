@@ -28,6 +28,7 @@ public class SwordProjectile : MonoBehaviour
         {
             Fire();
         }
+        
     }
 
     private void Fire()
@@ -44,6 +45,7 @@ public class SwordProjectile : MonoBehaviour
         //Use Vector 2 to make it work with 2d
         projectileClone.AddRelativeForce(Vector2.left * projectileThrust);
         
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -52,7 +54,7 @@ public class SwordProjectile : MonoBehaviour
         {
             //collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage * Player.GetComponent<playerPower>);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
 
        
     }
