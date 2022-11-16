@@ -18,15 +18,24 @@ public class EnemyHealth : MonoBehaviour
         healthBar.SetHealth(enemyHealth, enemyMaxHealth);
     }
 
+    private void Update()
+    {
+        //TakeDamage(1f); Call take damage funtion with value of 1 for damage amount
+        //if (Input.GetKeyDown(KeyCode.P))
+        {
+            //TakeDamage(1);
+        }
+
+          
+    }
+
 
     public void TakeDamage(float damageAmount)
     {
         //apply damage to enemy health
-        if (Input.GetButton("P"))
-        {
-            Debug.Log("Enemy Took Damage");
-            enemyHealth -= damageAmount;
-        }
+        Debug.Log("Enemy Took Damage");
+        enemyHealth -= damageAmount;
+        
 
         //if HP is equal or less than 0, destroy enemy game object
         if(enemyHealth <= 0f)

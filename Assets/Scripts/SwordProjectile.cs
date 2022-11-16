@@ -7,7 +7,7 @@ public class SwordProjectile : MonoBehaviour
     //public float projectileSpeed;
     public Rigidbody2D projectile;
     private float projectileThrust;
-    public float damage;
+    public float damage = 5f;
     
 
     // Start is called before the first frame update
@@ -28,7 +28,8 @@ public class SwordProjectile : MonoBehaviour
         {
             Fire();
         }
-        
+
+
     }
 
     private void Fire()
@@ -50,14 +51,19 @@ public class SwordProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         //if (collision.gameObject.GetComponent<EnemyHealth>() != null)
+        if(collision.gameObject.tag == "Enemy")
         {
-            //collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage * Player.GetComponent<playerPower>);
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage * GetComponent<Player>().playerPower);
+            Destroy(gameObject);
         }
-        //Destroy(gameObject);
+        Destroy(gameObject, 1f);
 
        
     }
+
+    
 
 
 }

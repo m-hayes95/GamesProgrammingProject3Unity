@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision with" + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             //Player Takes Damage on collision
             Debug.Log("Player Takes Damage");
@@ -71,6 +71,8 @@ public class Player : MonoBehaviour
         companionsCollected += companionsPickedUp;
         Debug.Log("Player Power Increased By 1");
         playerPower += 1;
+        
+       
         // When player picks up companion collectable, a follwer is spawned at the spawn point position
         GameObject follower = Instantiate(followingCompanion, spawnPoint.position, Quaternion.identity) as GameObject;
     }
