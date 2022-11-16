@@ -5,59 +5,50 @@ using UnityEngine;
 public class SwordProjectile : MonoBehaviour
 {
     //public float projectileSpeed;
-    public Rigidbody2D projectile;
     private float projectileThrust;
     public float damage = 5f;
+    //Reference to player script
+    Player thePlayer;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        //projectileSpeed = 1000f;
+        //Get rigid body and apply right movement to it
+        Rigidbody2D r = GetComponent<Rigidbody2D>();
         projectileThrust = 1000f;
-        //projectile = GetComponent<Rigidbody2D>();
-        //projectile.AddForce(projectileThrust, 0, 0, ForceMode.Impulse);
-        
-    }
+        r.AddRelativeForce(Vector2.right * projectileThrust);
+        //projectileSpeed = 1000f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //If input is activated, run void Fire code below
-        if (Input.GetButtonDown("Jump"))
-        {
-            Fire();
-        }
-
+        //Get reference to player for power level variable
+        thePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
     }
 
-    private void Fire()
-    {
-        //Fires Sword projectile clone game object
-        Rigidbody2D projectileClone = (Rigidbody2D)Instantiate(projectile, transform.position, transform.rotation);
-        //Set speed of projectile to foward position * the projectile speed variable
-        //projectileClone.velocity = transform.forward * projectileSpeed;
-        //projectileClone.AddRelativeForce(Vector3.forward * projectileSpeed);
-
-        //Works but its using vector 3 positioning( forward = 0,0,1, we need the X axis to be 1), so forward dont work
-        //projectileClone.AddForce(transform.up * m_Thrust);
-        //projectile.AddForce(transform.forward * projectileThrust);
-        //Use Vector 2 to make it work with 2d
-        projectileClone.AddRelativeForce(Vector2.left * projectileThrust);
-        
-        
-    }
+ 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
         //if (collision.gameObject.GetComponent<EnemyHealth>() != null)
+        //Check Collision is with Enemy or not
         if(collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage * GetComponent<Player>().playerPower);
-            Destroy(gameObject);
+
+            //If true, get enemy health script
+            EnemyHealth eH = collision.gameObject.GetComponent<EnemyHealth>();
+
+            //check if we have a referecne to the enemy's health and the player script
+            if(eH != null && thePlayer != null)
+            {
+                //Apply TakeDamage function in Enemy Health script
+                //Multiply TakeDamage function by the damage variable and Player. player power
+                eH.TakeDamage(damage * thePlayer.playerPower);
+                Destroy(gameObject);
+            }
+           
         }
+        //If collision was not with enemy, Destroy projectile after set delay
         Destroy(gameObject, 1f);
 
        

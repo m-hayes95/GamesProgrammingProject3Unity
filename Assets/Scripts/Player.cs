@@ -5,13 +5,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Animator myAnimator;
-    public GameObject mySprites, followingCompanion;
-    public Transform spawnPoint;
+    public GameObject mySprites, followingCompanion, projectile;
+    public Transform spawnPointFollower, spawnPointN, spawnPointE, spawnPointS, spawnPointW;
 
-    private float maxHealth, health, damageFromEnemy;
+    private float maxHealth, health, damageFromEnemyCollide;
     public float speed;
     public int companionsCollected, playerPower;
     
+    public enum Facing { n, e, s, w}
+    public Facing facing;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +22,13 @@ public class Player : MonoBehaviour
         speed = 10f;
         maxHealth = 10f;
         health = maxHealth;
-        damageFromEnemy = 3f;
+        damageFromEnemyCollide = 3f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Horizontal and vertical movement using input manager
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
@@ -34,6 +36,14 @@ public class Player : MonoBehaviour
         
         transform.Translate(inputFromPlayer * speed * Time.deltaTime);
 
+        DirectionOfPlayer();
+
+        if(Input.GetButtonDown("Jump"))
+        {
+            Fire();
+        }
+       
+        //Animtaion switch sides
         //if (h == 0)
         {
             //Idle
@@ -54,7 +64,7 @@ public class Player : MonoBehaviour
         {
             //Player Takes Damage on collision
             Debug.Log("Player Takes Damage");
-            health -= damageFromEnemy;
+            health -= damageFromEnemyCollide;
 
             //Destroy Player on 0 or less health
             if (health <= 0)
@@ -74,6 +84,60 @@ public class Player : MonoBehaviour
         
        
         // When player picks up companion collectable, a follwer is spawned at the spawn point position
-        GameObject follower = Instantiate(followingCompanion, spawnPoint.position, Quaternion.identity) as GameObject;
+        GameObject follower = Instantiate(followingCompanion, spawnPointFollower.position, Quaternion.identity) as GameObject;
+    }
+
+    public void DirectionOfPlayer()
+    {
+        //Horizontal and vertical movement using input manager
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        //Check for direction, player is facing
+
+        //If we are facing east or West
+        if (h > 0)
+        {
+            facing = Facing.e;
+        }
+        if (h < 0)
+        {
+            facing = Facing.w;
+        }
+        //If we are facing North or South
+        if (v > 0)
+        {
+            facing = Facing.n;
+        }
+        if (v < 0)
+        {
+            facing = Facing.s;
+        }
+    }
+
+    public void Fire()
+    {
+        switch (facing)
+        {
+            case Facing.e:
+                //shoot from Spawn Point East
+                Instantiate(projectile, spawnPointE.transform.position, spawnPointE.transform.rotation);
+                break;
+
+            case Facing.w:
+                //shoot from Spawn Point West
+                Instantiate(projectile, spawnPointW.transform.position, spawnPointW.transform.rotation);
+                break;
+           
+            case Facing.n:
+                //shoot from Spawn Point North
+                Instantiate(projectile, spawnPointN.transform.position, spawnPointN.transform.rotation);
+                break;
+
+            case Facing.s:
+                //shoot from Spawn Point South
+                Instantiate(projectile, spawnPointS.transform.position, spawnPointS.transform.rotation);
+                break;
+        }
     }
 }

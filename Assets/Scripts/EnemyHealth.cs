@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
         //Enemies staring HP
         enemyHealth = enemyMaxHealth;
         //Set health bar on enemies
-        healthBar.SetHealth(enemyHealth, enemyMaxHealth);
+        //healthBar.SetHealth(enemyHealth, enemyMaxHealth); TO DO - Put back in when connecting health
     }
 
     private void Update()
