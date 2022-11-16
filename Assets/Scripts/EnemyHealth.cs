@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     private float enemyMaxHealth = 10f;
-    private float enemyHealth;
+    public float enemyHealth;
     //Referencing Enemy health bar class
     public EnemyHealthBar healthBar;
 
@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         //apply damage to enemy health
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButton("P"))
         {
             Debug.Log("Enemy Took Damage");
             enemyHealth -= damageAmount;
