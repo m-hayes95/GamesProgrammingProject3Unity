@@ -5,13 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Animator myAnimator;
-    public GameObject mySprites;
-    private float maxHealth;
+    public GameObject mySprites, followingCompanion;
+    public Transform spawnPoint;
+
+    private float maxHealth, health, damageFromEnemy;
     public float speed;
-    private float health;
-    private float damageFromEnemy;
-    public int companionsCollected;
-    public int playerPower;
+    public int companionsCollected, playerPower;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -67,8 +67,11 @@ public class Player : MonoBehaviour
     public void CollectedCompanion(int companionsPickedUp)
     {
         //when collected companion event is triggered add one to companions collected and Player power level
+        //Player power level multiplies damage of player attacks
         companionsCollected += companionsPickedUp;
         Debug.Log("Player Power Increased By 1");
         playerPower += 1;
+        // When player picks up companion collectable, a follwer is spawned at the spawn point position
+        GameObject follower = Instantiate(followingCompanion, spawnPoint.position, Quaternion.identity) as GameObject;
     }
 }
