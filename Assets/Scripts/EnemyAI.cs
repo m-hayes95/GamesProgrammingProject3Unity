@@ -6,7 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     public GameObject player;
     //Using Volume Detection class to create new variable
-    public VolumeDetection volumeToMonitor;
+    //public VolumeDetection volumeToMonitor;
     public float speed;
 
 
@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     {
         //have enemy prefab look for actors with Player tag inide trigger with Combat Zone tag
         player = GameObject.FindGameObjectWithTag("Player");
-        volumeToMonitor = GameObject.FindGameObjectWithTag("CombatZone").GetComponent<VolumeDetection>();
+        //volumeToMonitor = GameObject.FindGameObjectWithTag("CombatZone").GetComponent<VolumeDetection>();
 
 
     }
@@ -82,7 +82,7 @@ public class EnemyAI : MonoBehaviour
         //clamp backwards value to either -1 of 1 to preventing putting in higher / lower numbers
         backwards = Mathf.Clamp(backwards, -1, 1);
         //checking clamp works
-        Debug.Log(backwards);
+        //Debug.Log(backwards);
         //move forward along the X axis (Fowards = X = 1) (X, Y, Z)
         transform.Translate(backwards * speed * Time.deltaTime, 0, 0);
         //for future sprite
@@ -94,8 +94,8 @@ public class EnemyAI : MonoBehaviour
         //clamp backwards value to either -1 of 1 to preventing putting in higher / lower numbers
         upwards = Mathf.Clamp(upwards, -1, 1);
         //checking clamp works
-        Debug.Log(upwards);
-        //move forward along the X axis (Fowards = X = 1) (X, Y, Z)
+        //Debug.Log(upwards);
+        //move forward along the Y axis (Fowards = X = 1) (X, Y, Z)
         transform.Translate(0, upwards * speed * Time.deltaTime, 0);
 
     }
