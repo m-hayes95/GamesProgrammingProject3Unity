@@ -8,7 +8,7 @@ public class CompanionAI : MonoBehaviour
     public GameObject player;
     //change speed to private TODO (public used for debugging)
     public float speed;
-    private bool playerInsideRadius;
+    public bool playerInsideRadius;
     //value to apply damage to player when companion is hit by an enemy projectile
     public float damageToPlayer;
 
@@ -77,7 +77,7 @@ public class CompanionAI : MonoBehaviour
         transform.Translate(0, upwards * speed * Time.deltaTime, 0);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         //when player enters the acceptance radius
         if(other.gameObject.tag == "Player")
@@ -85,9 +85,11 @@ public class CompanionAI : MonoBehaviour
             Debug.Log("Player too close...");
             playerInsideRadius = true;
         }
+
+        //If the game object tag is "enemy projectile" call Damage Player on hit function TODO!!!!
     }
 
-    private void OnCollisionExit2D(Collision other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         //when player leaves the acceptance radius
         if (other.gameObject.tag == "Player")
@@ -97,8 +99,9 @@ public class CompanionAI : MonoBehaviour
         }
     }
 
-    private void DamagePlayerOnHit()
+    public void DamagePlayerOnHit()
     {
         //apply damage to player using damageToPlayer variable
+        Debug.Log("Companion Send damage to player");
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //refernece for pillars to be randomly instantiated throughout the level
     private GameObject pillars;
 
     // Start is called before the first frame update

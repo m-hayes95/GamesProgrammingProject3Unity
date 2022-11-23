@@ -152,4 +152,14 @@ public class Player : MonoBehaviour
         Debug.Log("Player Has Died");
         Destroy(gameObject);
     }
+
+    public void PlayerTakeDamage(float playerDamageAmount)
+    {
+        //apply damage to Player * enemy projectile damage value
+    }
+
+    private void CompanionsHitTakeDamage(float companionDamageAmount)
+    {
+        //apply damage to player using damageToPlayer variable
+    }
 }
