@@ -5,13 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Animator myAnimator;
+    //references to sprite and spawn companions and projectiles
     public GameObject mySprites, followingCompanion, projectile;
+    //Spawn locations for projectiles and followers
     public Transform spawnPointFollower, spawnPointN, spawnPointE, spawnPointS, spawnPointW;
-
     private float maxHealth, health, damageFromEnemyCollide;
+    //speed set to public for debugging, change to private
     public float speed;
+    //Player Power used to multiply damage with companions collected
     public int companionsCollected, playerPower;
-    
+    //enum used to excecute
     public enum Facing { n, e, s, w}
     public Facing facing;
 
@@ -33,17 +36,24 @@ public class Player : MonoBehaviour
         float v = Input.GetAxis("Vertical");
 
         Vector3 inputFromPlayer = new Vector3(h, v, 0);
-        
+        //use speed and time delt time to control speed
         transform.Translate(inputFromPlayer * speed * Time.deltaTime);
 
+        //check for direction of player to shoot in correct direction
         DirectionOfPlayer();
 
+        //Call fire function to shoot projectile
         if(Input.GetButtonDown("Jump"))
         {
             Fire();
         }
        
-        //Animtaion switch sides
+        //Call game over menu if player dies
+        if(health <= 0)
+        {
+            OnDeathGameOverScreen();
+        }
+        //Animtaion switch sides TODO!!!
         //if (h == 0)
         {
             //Idle
@@ -62,15 +72,9 @@ public class Player : MonoBehaviour
         Debug.Log("Collision with" + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //Player Takes Damage on collision
+            //Player Takes Damage on collision with enemies
             Debug.Log("Player Takes Damage");
             health -= damageFromEnemyCollide;
-
-            //Destroy Player on 0 or less health
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
     }
 
@@ -87,7 +91,7 @@ public class Player : MonoBehaviour
         GameObject follower = Instantiate(followingCompanion, spawnPointFollower.position, Quaternion.identity) as GameObject;
     }
 
-    public void DirectionOfPlayer()
+    private void DirectionOfPlayer()
     {
         //Horizontal and vertical movement using input manager
         float h = Input.GetAxis("Horizontal");
@@ -115,7 +119,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Fire()
+    private void Fire()
     {
         switch (facing)
         {
@@ -139,5 +143,13 @@ public class Player : MonoBehaviour
                 Instantiate(projectile, spawnPointS.transform.position, spawnPointS.transform.rotation);
                 break;
         }
+    }
+
+    public void OnDeathGameOverScreen()
+    {
+        //Call function when player health reaches 0 or below 0.
+        //Open game over menu 
+        Debug.Log("Player Has Died");
+        Destroy(gameObject);
     }
 }

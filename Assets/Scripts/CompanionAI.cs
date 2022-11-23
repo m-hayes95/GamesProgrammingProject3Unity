@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class CompanionAI : MonoBehaviour
 {
+    //reference to player to follow
     public GameObject player;
+    //change speed to private TODO (public used for debugging)
     public float speed;
     private bool playerInsideRadius;
+    //value to apply damage to player when companion is hit by an enemy projectile
+    public float damageToPlayer;
+
+    
 
 
     // Start is called before the first frame update
@@ -81,7 +87,7 @@ public class CompanionAI : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnCollisionExit2D(Collision other)
     {
         //when player leaves the acceptance radius
         if (other.gameObject.tag == "Player")
@@ -89,5 +95,10 @@ public class CompanionAI : MonoBehaviour
             Debug.Log("Following PLayer...");
             playerInsideRadius = false;
         }
+    }
+
+    private void DamagePlayerOnHit()
+    {
+        //apply damage to player using damageToPlayer variable
     }
 }

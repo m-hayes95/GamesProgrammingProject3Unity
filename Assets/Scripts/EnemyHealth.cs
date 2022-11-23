@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     private float enemyMaxHealth = 10f;
+    //enemyhealth public for debugging, change to private TODO!!!
     public float enemyHealth;
     //Referencing Enemy health bar class
-    public EnemyHealthBar healthBar;
+    //public EnemyHealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +21,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
-        //TakeDamage(1f); Call take damage funtion with value of 1 for damage amount
-        //if (Input.GetKeyDown(KeyCode.P))
-        {
-            //TakeDamage(1);
-        }
-
-          
+      
     }
 
 

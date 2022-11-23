@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SwordProjectile : MonoBehaviour
 {
-    //public float projectileSpeed;
     private float projectileThrust;
     public float damage = 5f;
     //Reference to player script
@@ -14,13 +13,12 @@ public class SwordProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Get rigid body and apply right movement to it
+        //Get rigid body and apply right movement * the projectile thrust variable vlaue
         Rigidbody2D r = GetComponent<Rigidbody2D>();
         projectileThrust = 1000f;
         r.AddRelativeForce(Vector2.right * projectileThrust);
-        //projectileSpeed = 1000f;
 
-        //Get reference to player for power level variable
+        //Get reference to player for power level variable, to multiply damage by power level
         thePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
     }
@@ -29,21 +27,19 @@ public class SwordProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        //if (collision.gameObject.GetComponent<EnemyHealth>() != null)
         //Check Collision is with Enemy or not
         if(collision.gameObject.tag == "Enemy")
         {
-
-            //If true, get enemy health script
+            //temp variable created for refereces to collisions with actors that have enemy health scripts
             EnemyHealth eH = collision.gameObject.GetComponent<EnemyHealth>();
 
-            //check if we have a referecne to the enemy's health and the player script
+            //check if we have a referecne to the enemy's health and the player script before applying damage
             if(eH != null && thePlayer != null)
             {
                 //Apply TakeDamage function in Enemy Health script
-                //Multiply TakeDamage function by the damage variable and Player. player power
+                //Multiply TakeDamage function by the damage variable and Player script's player power
                 eH.TakeDamage(damage * thePlayer.playerPower);
+                //destroy projectile on impact
                 Destroy(gameObject);
             }
            

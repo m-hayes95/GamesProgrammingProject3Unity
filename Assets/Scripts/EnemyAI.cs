@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    //reference to player used to find and follow
     public GameObject player;
     //Using Volume Detection class to create new variable
     //public VolumeDetection volumeToMonitor;
+    //set to public for debugging, change to private TODO!!!
     public float speed;
+    private float enemyProjectileDamage;
 
 
     // Start is called before the first frame update
@@ -23,26 +26,6 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //3D/2D - enemy spins on Y axis to look at player in 2D
-        //reference to player inside volume bool within the Volume Detection class
-        //if (volumeToMonitor.playerInsideVolume == true)
-        {
-            //initial code that did not work in 2d
-            //Enemy to look at player
-            //transform.LookAt(player.transform.position);
-            //Enemy to chase player
-            //transform.Translate(Vector2.right * speed * Time.deltaTime);
-
-            //2D version of transform.LookAt(player.transform.position)
-            //Look at the player position
-            //Quaternion rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.TransformDirection(Vector3.up));
-            //transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
-
-            //2D version of transform.Translate(Vector3.forward)
-            //move right ('forward along X axis 1)
-            //transform.Translate(speed * Time.deltaTime, 0, 0);
-        }
-        //on tick, execute the face function below
         ChasePlayer();
     }
 
@@ -98,5 +81,11 @@ public class EnemyAI : MonoBehaviour
         //move forward along the Y axis (Fowards = X = 1) (X, Y, Z)
         transform.Translate(0, upwards * speed * Time.deltaTime, 0);
 
+    }
+
+    private void RangedAttack()
+    {
+        //instantiate enemy projectile used for ranged attack
+        //player health - enemyProjectileDamage
     }
 }
