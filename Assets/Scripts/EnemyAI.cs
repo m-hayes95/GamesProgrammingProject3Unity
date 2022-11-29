@@ -5,12 +5,19 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     //reference to player used to find and follow
-    public GameObject player;
+    public GameObject player, enemyProjectileObject;
+    //spawn point for enemy projectile
+    public Transform enemyProjectileSpawnPointF, enemyProjectileSpawnPointB;
     //Using Volume Detection class to create new variable
     //public VolumeDetection volumeToMonitor;
     //set to public for debugging, change to private TODO!!!
     public float speed;
-    private float enemyProjectileDamage;
+    public enum EnemyFacing { f, b}
+    public EnemyFacing enemyDirection;
+    public bool canShoot = true;
+
+
+    //private float enemyProjectileDamage;
 
 
     // Start is called before the first frame update
@@ -27,6 +34,10 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         ChasePlayer();
+        RangedAttack();
+        canShoot = false;
+        canShoot = true;
+        
     }
 
     private void ChasePlayer()
@@ -40,11 +51,13 @@ public class EnemyAI : MonoBehaviour
         if (x < 0)
         {
             MoveRight(1);
+            enemyDirection = EnemyFacing.f;
         }
 
         else
         {
             MoveRight(-1);
+            enemyDirection = EnemyFacing.b;
         }
 
         //Check if y is less than 0, and move up. If y is more than 0 move character down
@@ -85,7 +98,22 @@ public class EnemyAI : MonoBehaviour
 
     private void RangedAttack()
     {
+        if(canShoot == true)
+        {
+            switch (enemyDirection)
+            {
+                case EnemyFacing.f:
+                    Instantiate(enemyProjectileObject, enemyProjectileSpawnPointF.transform.position, enemyProjectileSpawnPointF.transform.rotation);
+                    break;
+
+                case EnemyFacing.b:
+                    Instantiate(enemyProjectileObject, enemyProjectileSpawnPointB.transform.position, enemyProjectileSpawnPointB.transform.rotation);
+                    break;
+            }
+        }
+
         //instantiate enemy projectile used for ranged attack
         //player health - enemyProjectileDamage
+        
     }
 }

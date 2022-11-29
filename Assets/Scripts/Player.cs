@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     public GameObject mySprites, followingCompanion, projectile;
     //Spawn locations for projectiles and followers
     public Transform spawnPointFollower, spawnPointN, spawnPointE, spawnPointS, spawnPointW;
-    private float maxHealth, health, damageFromEnemyCollide;
+    private float maxHealth, damageFromEnemyCollide;
+    [SerializeField] private float health;
     //speed set to public for debugging, change to private
     public float speed;
     //Player Power used to multiply damage with companions collected
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
     {
         myAnimator = GetComponent<Animator>();
         speed = 10f;
-        maxHealth = 10f;
+        maxHealth = 30f;
         health = maxHealth;
         damageFromEnemyCollide = 3f;
     }
@@ -156,10 +157,13 @@ public class Player : MonoBehaviour
     public void PlayerTakeDamage(float playerDamageAmount)
     {
         //apply damage to Player * enemy projectile damage value
+        Debug.Log("Player took damage from Enemy");
     }
 
-    private void CompanionsHitTakeDamage(float companionDamageAmount)
+    public void WhenCompanionsHitTakeDamage(float companionDamageAmount)
     {
         //apply damage to player using damageToPlayer variable
+        Debug.Log("Player took damage from Companion");
+        health -= companionDamageAmount;
     }
 }

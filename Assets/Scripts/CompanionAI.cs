@@ -10,7 +10,7 @@ public class CompanionAI : MonoBehaviour
     public float speed;
     public bool playerInsideRadius;
     //value to apply damage to player when companion is hit by an enemy projectile
-    public float damageToPlayer;
+    public float damageToPlayer = 0.5f;
 
     
 
@@ -103,5 +103,6 @@ public class CompanionAI : MonoBehaviour
     {
         //apply damage to player using damageToPlayer variable
         Debug.Log("Companion Send damage to player");
+        GetComponent<Player>().WhenCompanionsHitTakeDamage(damageToPlayer);
     }
 }
