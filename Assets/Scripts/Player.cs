@@ -166,4 +166,13 @@ public class Player : MonoBehaviour
         Debug.Log("Player took damage from Companion");
         health -= companionDamageAmount;
     }
+
+    public void OnHealthPotPickUp(float healUp)
+    {
+        health += healUp;
+        if (health >= maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
 }

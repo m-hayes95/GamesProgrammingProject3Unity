@@ -213,7 +213,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!114 &3624292038174613650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +235,7 @@ MonoBehaviour:
   spawnPointE: {fileID: 3624292038983820374}
   spawnPointS: {fileID: 3624292039746505671}
   spawnPointW: {fileID: 3624292038925398726}
+  health: 0
   speed: 10
   companionsCollected: 0
   playerPower: 1

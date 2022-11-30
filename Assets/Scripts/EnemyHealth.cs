@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
     private float enemyMaxHealth = 10f;
     //enemyhealth public for debugging, change to private TODO!!!
     public float enemyHealth;
+    //reference to health pot
+    public GameObject healthPotDrop;
     //Referencing Enemy health bar class
     //public EnemyHealthBar healthBar;
 
@@ -35,6 +37,7 @@ public class EnemyHealth : MonoBehaviour
         //if HP is equal or less than 0, destroy enemy game object
         if(enemyHealth <= 0f)
         {
+            Instantiate(healthPotDrop, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

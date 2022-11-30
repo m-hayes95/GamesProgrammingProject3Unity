@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    //reference to player used to find and follow
+    //reference to player used to find and follow, projectiles
     public GameObject player, enemyProjectileObject;
     //spawn point for enemy projectile
     public Transform enemyProjectileSpawnPointF, enemyProjectileSpawnPointB;
