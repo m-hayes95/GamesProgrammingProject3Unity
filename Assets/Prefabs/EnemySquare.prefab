@@ -106,13 +106,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700744051757959842}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.057, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -1.0570002, y: 0, z: 0}
   m_LocalScale: {x: 0.11730421, y: 0.11730421, z: 0.11730421}
   m_Children: []
   m_Father: {fileID: 7117472932053566422}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &2040292987490803675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -392,3 +392,4 @@ MonoBehaviour:
   speed: 2
   enemyDirection: 0
   canShoot: 1
+  shootTimer: 0

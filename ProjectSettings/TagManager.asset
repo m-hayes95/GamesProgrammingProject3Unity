@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - SwordProjectile
   - Companion
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX

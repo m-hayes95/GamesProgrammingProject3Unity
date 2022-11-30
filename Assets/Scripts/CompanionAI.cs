@@ -8,7 +8,7 @@ public class CompanionAI : MonoBehaviour
     public GameObject player;
     //change speed to private TODO (public used for debugging)
     public float speed;
-    public bool playerInsideRadius;
+    [SerializeField] private bool playerInsideRadius, companionInsideRadius = false;
     //value to apply damage to player when companion is hit by an enemy projectile
     public float damageToPlayer = 0.5f;
 
@@ -24,7 +24,7 @@ public class CompanionAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInsideRadius == false)
+        if (playerInsideRadius == false && companionInsideRadius == false)
         {
             FollowPlayer();
         }
@@ -86,16 +86,32 @@ public class CompanionAI : MonoBehaviour
             playerInsideRadius = true;
         }
 
+        if(other.gameObject.tag == "Companion")
+        {
+            Debug.Log("Companion too close...");
+            companionInsideRadius = true;
+        }
+
         //If the game object tag is "enemy projectile" call Damage Player on hit function TODO!!!!
+        if(other.gameObject.tag == "EnemyProjectile")
+        {
+            DamagePlayerOnHit();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        //when player leaves the acceptance radius
+        //when player leaves the followers's acceptance radius
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Following PLayer...");
             playerInsideRadius = false;
+        }
+
+        //when the companion leaves the follower's acceptance radius
+        if (other.gameObject.tag == "Companion")
+        {
+            companionInsideRadius = false;
         }
     }
 

@@ -29,11 +29,11 @@ public class EnemyProjectile : MonoBehaviour
         }
 
         //Check if collison is with companion and call Damage Player on hit function
-        if (collision.gameObject.tag == "Companion")
-        {
+        //if (collision.gameObject.tag == "Companion")
+        //{
             //if yes call damage player on hit function in the companion AI script:
-            collision.gameObject.GetComponent<CompanionAI>().DamagePlayerOnHit();
-        }
+            //collision.gameObject.GetComponent<CompanionAI>().DamagePlayerOnHit();
+        //}
         //if collosion was not with enemy or companion, Destroy the projectile
         Destroy(gameObject);
     }

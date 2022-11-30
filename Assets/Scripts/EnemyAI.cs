@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     public enum EnemyFacing { f, b}
     public EnemyFacing enemyDirection;
     public bool canShoot = true;
+    public float shootTimer;
 
 
     //private float enemyProjectileDamage;
@@ -34,10 +35,17 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         ChasePlayer();
-        RangedAttack();
-        canShoot = false;
-        canShoot = true;
         
+        if (shootTimer >= 1.0f)
+        {
+            RangedAttack();
+
+            shootTimer = 0f;
+        }
+        else
+        {
+            shootTimer += Time.deltaTime;
+        }
     }
 
     private void ChasePlayer()
@@ -98,19 +106,22 @@ public class EnemyAI : MonoBehaviour
 
     private void RangedAttack()
     {
-        if(canShoot == true)
+        
+        
+        switch (enemyDirection)
         {
-            switch (enemyDirection)
-            {
                 case EnemyFacing.f:
                     Instantiate(enemyProjectileObject, enemyProjectileSpawnPointF.transform.position, enemyProjectileSpawnPointF.transform.rotation);
+                    //canShoot = false;
+                    //Add delay here
+                    //canShoot = true;
                     break;
 
                 case EnemyFacing.b:
                     Instantiate(enemyProjectileObject, enemyProjectileSpawnPointB.transform.position, enemyProjectileSpawnPointB.transform.rotation);
                     break;
-            }
         }
+        
 
         //instantiate enemy projectile used for ranged attack
         //player health - enemyProjectileDamage
