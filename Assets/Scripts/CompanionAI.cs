@@ -109,7 +109,7 @@ public class CompanionAI : MonoBehaviour
         }
 
         //when the companion leaves the follower's acceptance radius
-        if (other.gameObject.tag == "Companion")
+        if (other.gameObject.tag == "Following behind Companion")
         {
             companionInsideRadius = false;
         }
@@ -119,6 +119,9 @@ public class CompanionAI : MonoBehaviour
     {
         //apply damage to player using damageToPlayer variable
         Debug.Log("Companion Send damage to player");
-        GetComponent<Player>().WhenCompanionsHitTakeDamage(damageToPlayer);
+        //Get temp ref to player script through game objet tag
+        Player thePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        //Call the damage player, when companions are hit, funciton
+        thePlayer.WhenCompanionsHitTakeDamage(damageToPlayer);
     }
 }
