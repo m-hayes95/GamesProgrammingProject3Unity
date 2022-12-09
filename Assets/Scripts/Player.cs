@@ -55,15 +55,15 @@ public class Player : MonoBehaviour
             OnDeathGameOverScreen();
         }
         //Animtaion switch sides TODO!!!
-        //if (h == 0)
+        if (h == 0)
         {
             //Idle
-            //myAnimator.SetBool(“IsRunning?”, false);
+            //myAnimator.SetBool("IsRunning", false);
             //mySprites.transform.localScale = new Vector3(1, 1, 1);
         } //else
         {
             //Moving right
-            //myAnimator.SetBool(“name of bool used in animator controller”, true);
+            //myAnimator.SetBool("IsRunning", true);
             //mySprites.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
