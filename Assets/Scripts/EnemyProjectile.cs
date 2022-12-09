@@ -18,7 +18,7 @@ public class EnemyProjectile : MonoBehaviour
         r.AddRelativeForce(Vector2.right * enemyProjectileThrust);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter(Collider2D collision)
     {
         //Check if collision is with player
         if (collision.gameObject.tag == "Player")
