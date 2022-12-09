@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public Text companionsCollectedText, playerHealthText;
+    public Text companionsCollectedText, playerHealthText, enemiesDefeatedText;
     public Player myPlayer;
 
     // Start is called before the first frame update
@@ -20,5 +20,6 @@ public class UIManager : MonoBehaviour
         //Update UI text for player health and companions collected
         companionsCollectedText.text = myPlayer.companionsCollected.ToString();
         playerHealthText.text = myPlayer.health.ToString(); 
+        enemiesDefeatedText.text = myPlayer.enemiesDefeated.ToString();
     }
 }

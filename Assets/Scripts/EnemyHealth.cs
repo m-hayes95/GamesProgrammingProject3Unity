@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public Player eHPlayerRef;
     private float enemyMaxHealth = 10f;
     //enemyhealth public for debugging, change to private TODO!!!
     public float enemyHealth;
@@ -17,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
     {
         //Enemies staring HP
         enemyHealth = enemyMaxHealth;
+        //Find player ref
+        eHPlayerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         //Set health bar on enemies
         //healthBar.SetHealth(enemyHealth, enemyMaxHealth); TO DO - Put back in when connecting health
     }
@@ -38,6 +41,8 @@ public class EnemyHealth : MonoBehaviour
         if(enemyHealth <= 0f)
         {
             Instantiate(healthPotDrop, transform.position, transform.rotation);
+            //eHPlayerRef.GetComponent<Player>().OnEnemyDefeated();
+            eHPlayerRef.OnEnemyDefeated();
             Destroy(gameObject);
         }
     }

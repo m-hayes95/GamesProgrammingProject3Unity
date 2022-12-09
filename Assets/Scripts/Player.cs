@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameManager gameManager;
     public Animator myAnimator;
     //references to sprite and spawn companions and projectiles
     public GameObject mySprite, followingCompanion, projectile;
@@ -56,6 +57,8 @@ public class Player : MonoBehaviour
         {
             OnDeathGameOverScreen();
         }
+
+        
       
     }
 
@@ -150,6 +153,7 @@ public class Player : MonoBehaviour
         //Call function when player health reaches 0 or below 0.
         //Open game over menu 
         Debug.Log("Player Has Died");
+        gameManager.GetComponent<GameManager>().RestartLevel();
         Destroy(gameObject);
     }
 
@@ -173,6 +177,17 @@ public class Player : MonoBehaviour
         if (health >= maxHealth)
         {
             health = maxHealth;
+        }
+    }
+
+    public void OnEnemyDefeated()
+    {
+        enemiesDefeated++;
+        //Call restart once all eneimes are defeated
+        if (enemiesDefeated >= 5)
+        {
+            //Change for different fucntion later TODO!!!
+            OnDeathGameOverScreen();
         }
     }
 }
