@@ -36,7 +36,7 @@ public class EnemyAI : MonoBehaviour
     protected void Update()
     {
         //Check player distance relavtive to enemy
-        Debug.Log("Player is" + Vector3.Distance(transform.position, player.transform.position) + " from " + gameObject.name);
+        //Debug.Log("Player is" + Vector3.Distance(transform.position, player.transform.position) + " from " + gameObject.name);
 
         //State machine conditions
         switch (enemyAiSM)
@@ -159,10 +159,7 @@ public class EnemyAI : MonoBehaviour
                     Instantiate(enemyProjectileObject, enemyProjectileSpawnPointB.transform.position, enemyProjectileSpawnPointB.transform.rotation);
                     break;
         }
-        
-
-        //instantiate enemy projectile used for ranged attack
-        //player health - enemyProjectileDamage
+      
         
     }
 }

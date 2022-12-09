@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public Animator myAnimator;
     //references to sprite and spawn companions and projectiles
-    public GameObject mySprites, followingCompanion, projectile;
+    public GameObject mySprite, followingCompanion, projectile;
     //Spawn locations for projectiles and followers
     public Transform spawnPointFollower, spawnPointN, spawnPointE, spawnPointS, spawnPointW;
     private float maxHealth, damageFromEnemyCollide;
@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         Vector3 inputFromPlayer = new Vector3(h, v, 0);
         //use speed and time delt time to control speed
         transform.Translate(inputFromPlayer * speed * Time.deltaTime);
+        //myAnimator.SetBool("IsRunning", true);
 
         //check for direction of player to shoot in correct direction
         DirectionOfPlayer();
@@ -54,18 +55,7 @@ public class Player : MonoBehaviour
         {
             OnDeathGameOverScreen();
         }
-        //Animtaion switch sides TODO!!!
-        if (h == 0)
-        {
-            //Idle
-            //myAnimator.SetBool("IsRunning", false);
-            //mySprites.transform.localScale = new Vector3(1, 1, 1);
-        } //else
-        {
-            //Moving right
-            //myAnimator.SetBool("IsRunning", true);
-            //mySprites.transform.localScale = new Vector3(-1, 1, 1);
-        }
+      
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -104,10 +94,18 @@ public class Player : MonoBehaviour
         if (h > 0)
         {
             facing = Facing.e;
+            //Set scale of sprite to face left
+            mySprite.transform.localScale = new Vector3(-1.7f,
+                mySprite.transform.localScale.y,
+                mySprite.transform.localScale.z);
         }
         if (h < 0)
         {
             facing = Facing.w;
+            //Set scale of sprite to face right
+            mySprite.transform.localScale = new Vector3(1.7f,
+                mySprite.transform.localScale.y,
+                mySprite.transform.localScale.z);
         }
         //If we are facing North or South
         if (v > 0)
@@ -158,6 +156,7 @@ public class Player : MonoBehaviour
     {
         //apply damage to Player * enemy projectile damage value
         Debug.Log("Player took damage from Enemy");
+        health -= playerDamageAmount;
     }
 
     public void WhenCompanionsHitTakeDamage(float companionDamageAmount)
