@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public Player eHPlayerRef;
-    private float enemyMaxHealth = 10f;
+    private float enemyMaxHealth = 40f;
     //enemyhealth public for debugging, change to private TODO!!!
     public float enemyHealth;
     //reference to health pot
