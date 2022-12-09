@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CompanionAI : MonoBehaviour
 {
-    //reference to player to follow
-    public GameObject player;
+    //call animator
+    public Animator followerAnimator;
+    //reference to player to follow and for followers sprite
+    public GameObject player, followerSprite;
     //change speed to private TODO (public used for debugging)
     public float speed;
     [SerializeField] private bool playerInsideRadius, companionInsideRadius = false;
@@ -42,11 +44,19 @@ public class CompanionAI : MonoBehaviour
         if(x < 0)
         {
             FollowRight(1);
+            //Set scale of sprite to face left
+            followerSprite.transform.localScale = new Vector3(-5.5f,
+            followerSprite.transform.localScale.y,
+            followerSprite.transform.localScale.z);
         }
 
         else
         {
             FollowRight(-1);
+            //Set scale of sprite to face left
+            followerSprite.transform.localScale = new Vector3(5.5f,
+            followerSprite.transform.localScale.y,
+            followerSprite.transform.localScale.z);
         }
 
         //if y is less than 0, move up and if more than 0, move down
@@ -67,6 +77,7 @@ public class CompanionAI : MonoBehaviour
         backwards = Mathf.Clamp(backwards, -1, 1);
         //Move forward along the X axis * Speed and delta time
         transform.Translate(backwards * speed * Time.deltaTime, 0, 0);
+       
     }
 
     private void FollowUp(float upwards)

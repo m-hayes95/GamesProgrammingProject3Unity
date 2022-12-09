@@ -10,11 +10,12 @@ public class Player : MonoBehaviour
     //Spawn locations for projectiles and followers
     public Transform spawnPointFollower, spawnPointN, spawnPointE, spawnPointS, spawnPointW;
     private float maxHealth, damageFromEnemyCollide;
-    [SerializeField] private float health;
+    //needs to be public for UI manager
+    public float health;
     //speed set to public for debugging, change to private
     public float speed;
     //Player Power used to multiply damage with companions collected
-    public int companionsCollected, playerPower;
+    public int companionsCollected, playerPower, enemiesDefeated;
     //enum used to excecute
     public enum Facing { n, e, s, w}
     public Facing facing;

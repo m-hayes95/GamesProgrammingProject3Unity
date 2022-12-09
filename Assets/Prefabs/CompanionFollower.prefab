@@ -124,7 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01ed8248ad4aab41b4ed9d72209c76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3624292038174613652, guid: cd867f4d077372b4481bd494a20c91c9, type: 3}
+  followerAnimator: {fileID: 3156879643649691589}
+  player: {fileID: 0}
+  followerSprite: {fileID: 4597411298409339018}
   speed: 2
   playerInsideRadius: 0
   companionInsideRadius: 0
@@ -139,6 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1267399908688503870}
   - component: {fileID: 6119479092360514000}
+  - component: {fileID: 3156879643649691589}
   m_Layer: 0
   m_Name: FollowerSprite
   m_TagString: Untagged
@@ -155,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 4597411298409339018}
   m_LocalRotation: {x: -0, y: -0.9961947, z: 0, w: -0.08715578}
   m_LocalPosition: {x: -0.08, y: 0.15, z: 0}
-  m_LocalScale: {x: 5.4538, y: 5.4538, z: 5.4538}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 5.4538}
   m_Children: []
   m_Father: {fileID: 4221615352180546788}
   m_RootOrder: 0
@@ -211,6 +214,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3156879643649691589
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4597411298409339018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69e2c51cd694ec3428194e4acbf488b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8432411104601872101
 GameObject:
   m_ObjectHideFlags: 0
