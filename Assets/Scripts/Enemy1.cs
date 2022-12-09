@@ -12,31 +12,40 @@ public class Enemy1 : EnemyAI
     void Start()
     {
         enemyRangedAnimator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        ChasePlayer();
+        //base.Update();
+        Facing();
     }
 
-    private void ChasePlayer()
+    private void Facing()
     {
-        //on the x axis check if enemy is in front or behind player
-        //on the y axis check if enemy is in above or below player
+        //Get actor postion ref
         float x = transform.position.x - player.transform.position.x;
-        float y = transform.position.y - player.transform.position.y;
 
-        if (x <= 0)
+        //Turn Sprite depending on which was enemy is facing
+        if(x < 0)
         {
-            //Enemy Is moving Right, set sprite to face right
-            enemyRangedSprite.transform.localScale = new Vector3(1, 1, 1);
+            //Set enemy state to face foward
+            enemyDirection = EnemyFacing.f;
+            //Set scale of sprite to face forward
+            enemyRangedSprite.transform.localScale = new Vector3(2f, 
+                enemyRangedSprite.transform.localScale.y, 
+                enemyRangedSprite.transform.localScale.z);
         }
-
-        if (y <= 0)
+        else
         {
-            //Enemy Is moving Left, set sprite to face left
-            enemyRangedSprite.transform.localScale = new Vector3(-1, 1, 1);
+            //Set enemy state to face backwards
+            enemyDirection = EnemyFacing.b;
+            //Set scale of sprite to face backwards
+            enemyRangedSprite.transform.localScale = new Vector3(-2f,
+                enemyRangedSprite.transform.localScale.y,
+                enemyRangedSprite.transform.localScale.z);
         }
+        
     }
 }
