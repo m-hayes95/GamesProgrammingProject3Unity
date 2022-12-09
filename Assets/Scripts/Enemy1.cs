@@ -18,7 +18,7 @@ public class Enemy1 : EnemyAI
     // Update is called once per frame
     private void Update()
     {
-        //base.Update();
+        base.Update();
         Facing();
     }
 

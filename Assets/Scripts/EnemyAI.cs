@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    //reference to player used to find and follow, projectiles
+    //reference to player used to find projectiles. Player ref for child class
     public GameObject player, enemyProjectileObject;
     //spawn point for enemy projectile
     public Transform enemyProjectileSpawnPointF, enemyProjectileSpawnPointB;
-    //Using Volume Detection class to create new variable
-    //public VolumeDetection volumeToMonitor;
     //set to public for debugging, change to private TODO!!!
     public float speed;
+    //State machine for enemy direction
     public enum EnemyFacing { f, b}
     public EnemyFacing enemyDirection;
-    public bool canShoot = true;
+    // timer for shooting
     public float shootTimer;
+    //check if child class is able to shoot
+    //public bool canShoot = true;
 
+    //State machine for enemy state 
+    public enum EnemyAiSM { idle, chasing, shooting}
+    public EnemyAiSM enemyAiSM;
 
     //private float enemyProjectileDamage;
 
@@ -24,27 +28,62 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //have enemy prefab look for actors with Player tag inide trigger with Combat Zone tag
+        //On game run, look for instiated player actor
         player = GameObject.FindGameObjectWithTag("Player");
-        //volumeToMonitor = GameObject.FindGameObjectWithTag("CombatZone").GetComponent<VolumeDetection>();
-
-
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
-        ChasePlayer();
-        
-        if (shootTimer >= 1.0f)
-        {
-            RangedAttack();
+        //Check player distance relavtive to enemy
+        Debug.Log("Player is" + Vector3.Distance(transform.position, player.transform.position));
 
-            shootTimer = 0f;
-        }
-        else
+        //State machine conditions
+        switch (enemyAiSM)
         {
-            shootTimer += Time.deltaTime;
+            //Idle State
+            case EnemyAiSM.idle:
+                //Wait for the player to get close enough
+                if(Vector3.Distance(transform.position, player.transform.position) < 10f)
+                {
+                    //Player is close enough so switch to chasing
+                    enemyAiSM = EnemyAiSM.chasing;
+                }
+                break;
+
+            //Chasing State
+            case EnemyAiSM.chasing:
+                //Chase the player 
+                ChasePlayer();
+
+                //If close enough, shoot at the player
+                if (Vector3.Distance(transform.position, player.transform.position) < 5f)
+                {
+                    enemyAiSM = EnemyAiSM.shooting;
+                }
+                break;
+
+            //Shooting State
+            case EnemyAiSM.shooting:
+                //Shoot projectiles on timer
+                if (shootTimer >= 1.0f)
+                {
+                    RangedAttack();
+
+                    shootTimer = 0f;
+                }
+                else
+                {
+                    shootTimer += Time.deltaTime;
+                }
+
+                //if the player is too far away, return to chase
+                if (Vector3.Distance(transform.position, player.transform.position) > 7f)
+                {
+                    enemyAiSM = EnemyAiSM.chasing;
+                }
+                break;
+
         }
     }
 
@@ -89,8 +128,7 @@ public class EnemyAI : MonoBehaviour
         //Debug.Log(backwards);
         //move forward along the X axis (Fowards = X = 1) (X, Y, Z)
         transform.Translate(backwards * speed * Time.deltaTime, 0, 0);
-        //for future sprite
-        //sprite variable name.transform.localScale = new Vector3(backwards, 1, 1);
+       
     }
 
     private void MoveUp(float upwards)

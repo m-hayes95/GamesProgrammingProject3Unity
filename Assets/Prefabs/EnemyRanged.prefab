@@ -410,9 +410,9 @@ MonoBehaviour:
   enemyProjectileObject: {fileID: 6408554208863842688, guid: 131d5b756b528854485ebbd813238c04, type: 3}
   enemyProjectileSpawnPointF: {fileID: 3640415646802811902}
   enemyProjectileSpawnPointB: {fileID: 4829584921480978956}
-  speed: 0
+  speed: 3
   enemyDirection: 0
-  canShoot: 1
   shootTimer: 0
+  enemyAiSM: 0
   enemyRangedAnimator: {fileID: 2584016621175963667}
   enemyRangedSprite: {fileID: 771714319077284480}
