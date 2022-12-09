@@ -36,7 +36,7 @@ public class EnemyAI : MonoBehaviour
     protected void Update()
     {
         //Check player distance relavtive to enemy
-        Debug.Log("Player is" + Vector3.Distance(transform.position, player.transform.position));
+        Debug.Log("Player is" + Vector3.Distance(transform.position, player.transform.position) + " from " + gameObject.name);
 
         //State machine conditions
         switch (enemyAiSM)

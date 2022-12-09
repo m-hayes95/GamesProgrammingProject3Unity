@@ -18,11 +18,14 @@ public class EnemyProjectile : MonoBehaviour
         r.AddRelativeForce(Vector2.right * enemyProjectileThrust);
     }
 
-    private void OnTriggerEnter(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.name);
         //Check if collision is with player
         if (collision.gameObject.tag == "Player")
         {
+            
             //if yes call player take damage funciton on player script:
             collision.gameObject.GetComponent<Player>().PlayerTakeDamage(enemyDamage);
             Destroy(gameObject);

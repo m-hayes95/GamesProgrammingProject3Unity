@@ -692,6 +692,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4352933650415222051, guid: ac43db39f6125774da61c39a259f0852, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280620722344791649, guid: ac43db39f6125774da61c39a259f0852, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4076492
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280620722344791649, guid: ac43db39f6125774da61c39a259f0852, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.2038247
+      objectReference: {fileID: 0}
     - target: {fileID: 6670433645808860632, guid: ac43db39f6125774da61c39a259f0852, type: 3}
       propertyPath: m_Name
       value: EnemyBoss
@@ -702,11 +714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8359484859754589084, guid: ac43db39f6125774da61c39a259f0852, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6399895
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8359484859754589084, guid: ac43db39f6125774da61c39a259f0852, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6399895
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8359484859754589084, guid: ac43db39f6125774da61c39a259f0852, type: 3}
       propertyPath: m_LocalScale.z
@@ -4241,6 +4253,10 @@ PrefabInstance:
     - target: {fileID: 7117472932053566426, guid: 6be0e0a8f4569e0439e8f0479866049c, type: 3}
       propertyPath: m_Name
       value: EnemyRanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7117472932053566426, guid: 6be0e0a8f4569e0439e8f0479866049c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be0e0a8f4569e0439e8f0479866049c, type: 3}

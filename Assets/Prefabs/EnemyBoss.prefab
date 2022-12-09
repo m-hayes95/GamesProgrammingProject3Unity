@@ -127,7 +127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4932216435763832633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.123, y: -0.155, z: 0}
+  m_LocalPosition: {x: 1.22, y: -0.155, z: 0}
   m_LocalScale: {x: 0.29778144, y: 0.29778144, z: 0.29778144}
   m_Children: []
   m_Father: {fileID: 8359484859754589084}
@@ -294,7 +294,7 @@ Transform:
   m_GameObject: {fileID: 6670433645808860632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0589459, y: 1.0589459, z: 1.0589459}
+  m_LocalScale: {x: 2, y: 2, z: 1.6399895}
   m_Children:
   - {fileID: 4140684258584072585}
   - {fileID: 4352933650415222051}
@@ -315,7 +315,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.32315278, y: -0.17073745}
+  m_Offset: {x: 0.2038247, y: -0.17073745}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -326,7 +326,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6463053, y: 1.3414747}
+  m_Size: {x: 1.4076492, y: 1.3414747}
   m_EdgeRadius: 0
 --- !u!114 &8909822289567226461
 MonoBehaviour:
@@ -360,7 +360,7 @@ MonoBehaviour:
   enemyProjectileSpawnPointB: {fileID: 4428999721430831097}
   speed: 3
   enemyDirection: 0
-  canShoot: 1
   shootTimer: 0
+  enemyAiSM: 0
   bossAnimator: {fileID: 7449530058059868662}
   bossSprite: {fileID: 3069012914904043052}
