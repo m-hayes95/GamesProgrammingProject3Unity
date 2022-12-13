@@ -11,6 +11,8 @@ TagManager:
   - SwordProjectile
   - Companion
   - EnemyProjectile
+  - RangedEnemySpawner
+  - BossEnemySpawner
   layers:
   - Default
   - TransparentFX
