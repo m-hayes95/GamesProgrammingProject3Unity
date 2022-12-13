@@ -6,12 +6,15 @@ public class EnemyBoss : EnemyAI
 {
     public Animator bossAnimator;
     public GameObject bossSprite;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         bossAnimator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
+        //set is boss bool on parent class to true
+        isBoss = true;
     }
 
     // Update is called once per frame
@@ -19,6 +22,7 @@ public class EnemyBoss : EnemyAI
     {
         base.Update();
         Facing();
+        
     }
 
     private void MeleeAttack()

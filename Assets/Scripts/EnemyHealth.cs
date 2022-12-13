@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject healthPotDrop;
     //Referencing Enemy health bar class
     //public EnemyHealthBar healthBar;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
         enemyHealth = enemyMaxHealth;
         //Find player ref
         eHPlayerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        
         //Set health bar on enemies
         //healthBar.SetHealth(enemyHealth, enemyMaxHealth); TO DO - Put back in when connecting health
     }

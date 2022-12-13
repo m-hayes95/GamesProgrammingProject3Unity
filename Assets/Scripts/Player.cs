@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public float speed;
     //Player Power used to multiply damage with companions collected
     public int companionsCollected, playerPower, enemiesDefeated;
+    //check if boss is defeated for game win condition
+    private bool bossDefeatedYes;
     //enum used to excecute
     public enum Facing { n, e, s, w}
     public Facing facing;
@@ -184,7 +186,7 @@ public class Player : MonoBehaviour
     {
         enemiesDefeated++;
         //Call restart once all eneimes are defeated
-        if (enemiesDefeated >= 5)
+        if (enemiesDefeated >= 10 && !bossDefeatedYes)
         {
             //Change for different fucntion later TODO!!!
             OnDeathGameOverScreen();

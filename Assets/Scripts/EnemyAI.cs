@@ -17,6 +17,8 @@ public class EnemyAI : MonoBehaviour
     public float shootTimer;
     //check if child class is able to shoot
     //public bool canShoot = true;
+    //check if enemy is boss
+    public bool isBoss;
 
     //State machine for enemy state 
     public enum EnemyAiSM { idle, chasing, shooting}

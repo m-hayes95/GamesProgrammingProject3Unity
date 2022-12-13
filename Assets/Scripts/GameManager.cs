@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     //ref to ranged enemies
     public GameObject enemyRanged, enemyBoss;
     //ref to ranged enemy and boss spawner, and Player script
-    private GameObject enemyRangedSpawner, bossEnemySpawner, player;
+    private GameObject enemyRangedSpawner, enemyRangedSpawner2, bossEnemySpawner, player;
     private float spawnTimer;
     private bool bossHasSpawned;
 
@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         //assign ranged enemy and boss spawners on start up
         enemyRangedSpawner = GameObject.FindGameObjectWithTag("RangedEnemySpawner");
+        enemyRangedSpawner2 = GameObject.FindGameObjectWithTag("RangedEnemySpawner2");
         bossEnemySpawner = GameObject.FindGameObjectWithTag("BossEnemySpawner");
         //assign ref to player on start up
         player = GameObject.FindGameObjectWithTag("Player");
@@ -24,11 +25,12 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //spawn ranged enemies at spawn point on a timer
-        if (spawnTimer >=50.0f)
+        if (spawnTimer >=5.0f)
         {
             Debug.Log("Ranged Enemy Spawning...");
             Instantiate(enemyRanged, enemyRangedSpawner.transform.position, enemyRangedSpawner.transform.rotation);
-
+            Instantiate(enemyRanged, enemyRangedSpawner2.transform.position, enemyRangedSpawner2.transform.rotation);
+            //reset timer back to 0
             spawnTimer = 0f;
         }
         else
