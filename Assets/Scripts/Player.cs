@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //reference to the game manager script
     public GameManager gameManager;
+    //referecne to the player animator
     public Animator myAnimator;
     //references to sprite and spawn companions and projectiles
     public GameObject mySprite, followingCompanion, projectile;
     //Spawn locations for projectiles and followers
     public Transform spawnPointFollower, spawnPointN, spawnPointE, spawnPointS, spawnPointW;
+    //players max heatlh and damage taken when they collide with an enemy
     private float maxHealth, damageFromEnemyCollide;
     //needs to be public for UI manager
     public float health;
-    //speed set to public for debugging, change to private
-    public float speed;
+    //speed of player
+    [SerializeField] private float speed;
     //Player Power used to multiply damage with companions collected
     public int companionsCollected, playerPower, enemiesDefeated;
     //check if boss is defeated for game win condition
-    private bool bossDefeatedYes;
+    private bool bossDefeatedYes, playedDeathAnimation;
+    
+    //ref to player sound
+    [SerializeField] private AudioSource playerAttackSound, playerHitSound;
+
     //enum used to excecute
     public enum Facing { n, e, s, w}
     public Facing facing;
@@ -40,33 +47,52 @@ public class Player : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
+        //set h and v to a new vector 3
         Vector3 inputFromPlayer = new Vector3(h, v, 0);
+
         //use speed and time delt time to control speed
         transform.Translate(inputFromPlayer * speed * Time.deltaTime);
+
         //myAnimator.SetBool("IsRunning", true);
 
         //check for direction of player to shoot in correct direction
         DirectionOfPlayer();
 
         //Call fire function to shoot projectile
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             Fire();
         }
-       
+
         //Call game over menu if player dies
-        if(health <= 0)
+        if (health <= 0)
         {
             OnDeathGameOverScreen();
         }
-
         
-      
+        // Animator not not assigning and crashing game
+
+        // Only do the death animation once.
+        //myAnimator.SetBool("isDead", false);
+
+        // if (playedDeathAnimation == false)
+        //{
+            //if (Input.GetKeyDown("j"))
+            //{
+                //death of player
+
+                //myAnimator.SetBool("isDead", true);
+                //playedDeathAnimation = true;
+            //}
+
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision with" + collision.gameObject.name);
+        //check if player is colliding with an enemy
+
+        //Debug.Log("Collision with" + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //Player Takes Damage on collision with enemies
@@ -104,6 +130,8 @@ public class Player : MonoBehaviour
             mySprite.transform.localScale = new Vector3(-1.7f,
                 mySprite.transform.localScale.y,
                 mySprite.transform.localScale.z);
+           
+
         }
         if (h < 0)
         {
@@ -112,6 +140,7 @@ public class Player : MonoBehaviour
             mySprite.transform.localScale = new Vector3(1.7f,
                 mySprite.transform.localScale.y,
                 mySprite.transform.localScale.z);
+            
         }
         //If we are facing North or South
         if (v > 0)
@@ -126,26 +155,35 @@ public class Player : MonoBehaviour
 
     private void Fire()
     {
+        //check which direction the player is facing, then spawn and fire the projectile in that direction
         switch (facing)
         {
             case Facing.e:
                 //shoot from Spawn Point East
                 Instantiate(projectile, spawnPointE.transform.position, spawnPointE.transform.rotation);
+                //play shooting sound on attack
+                playerAttackSound.Play();
                 break;
 
             case Facing.w:
                 //shoot from Spawn Point West
                 Instantiate(projectile, spawnPointW.transform.position, spawnPointW.transform.rotation);
+                //play shooting sound on attack
+                playerAttackSound.Play();
                 break;
            
             case Facing.n:
                 //shoot from Spawn Point North
                 Instantiate(projectile, spawnPointN.transform.position, spawnPointN.transform.rotation);
+                //play shooting sound on attack
+                playerAttackSound.Play();
                 break;
 
             case Facing.s:
                 //shoot from Spawn Point South
                 Instantiate(projectile, spawnPointS.transform.position, spawnPointS.transform.rotation);
+                //play shooting sound on attack
+                playerAttackSound.Play();
                 break;
         }
     }
@@ -153,24 +191,31 @@ public class Player : MonoBehaviour
     public void OnDeathGameOverScreen()
     {
         //Call function when player health reaches 0 or below 0.
-        //Open game over menu 
+        //Open game over menu when created
         Debug.Log("Player Has Died");
+        //Restart level for now
         gameManager.GetComponent<GameManager>().RestartLevel();
-        Destroy(gameObject);
+        //Destroy player actor
+        Destroy(gameObject, 1f);
     }
 
     public void PlayerTakeDamage(float playerDamageAmount)
     {
+        //Debug.Log("Player took damage from Enemy");
+        //play hit sound
+        playerHitSound.Play();
         //apply damage to Player * enemy projectile damage value
-        Debug.Log("Player took damage from Enemy");
         health -= playerDamageAmount;
     }
 
     public void WhenCompanionsHitTakeDamage(float companionDamageAmount)
     {
+        
+        //Debug.Log("Player took damage from Companion");
         //apply damage to player using damageToPlayer variable
-        Debug.Log("Player took damage from Companion");
         health -= companionDamageAmount;
+        //play hit sound on player
+        playerHitSound.Play();
     }
 
     public void OnHealthPotPickUp(float healUp)
@@ -186,7 +231,7 @@ public class Player : MonoBehaviour
     {
         enemiesDefeated++;
         //Call restart once all eneimes are defeated
-        if (enemiesDefeated >= 10 && !bossDefeatedYes)
+        if (enemiesDefeated >= 10)
         {
             //Change for different fucntion later TODO!!!
             OnDeathGameOverScreen();

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBoss : EnemyAI
 {
+    //get ref to boss sprite and animator
     public Animator bossAnimator;
     public GameObject bossSprite;
     
@@ -11,7 +12,9 @@ public class EnemyBoss : EnemyAI
     // Start is called before the first frame update
     void Start()
     {
+        // assign boss animator
         bossAnimator = GetComponent<Animator>();
+        //assign player from parent script to use in facing function
         player = GameObject.FindGameObjectWithTag("Player");
         //set is boss bool on parent class to true
         isBoss = true;
@@ -20,7 +23,9 @@ public class EnemyBoss : EnemyAI
     // Update is called once per frame
     void Update()
     {
+        //call all parent functions
         base.Update();
+        //call facing funciton
         Facing();
         
     }

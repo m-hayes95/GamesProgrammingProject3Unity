@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    //ref to canvas updating text UI
     public Text companionsCollectedText, playerHealthText, enemiesDefeatedText, winConditionDisplayText;
+    //ref to player
     public Player myPlayer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  
 
     // Update is called once per frame
     void Update()

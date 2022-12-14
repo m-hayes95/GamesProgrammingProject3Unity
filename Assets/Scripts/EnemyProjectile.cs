@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
+    //damage projectile applies
     public float enemyDamage = 5f;
+    //thrust applied to projectile
     private float enemyProjectileThrust;
 
     // Start is called before the first frame update
@@ -21,7 +23,7 @@ public class EnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         //Check if collision is with player
         if (collision.gameObject.tag == "Player")
         {
@@ -30,13 +32,16 @@ public class EnemyProjectile : MonoBehaviour
             collision.gameObject.GetComponent<Player>().PlayerTakeDamage(enemyDamage);
             Destroy(gameObject);
         }
+        
+        
 
         //Check if collison is with companion and call Damage Player on hit function
-        //if (collision.gameObject.tag == "Companion")
-        //{
+        if (collision.gameObject.tag == "Companion")
+        {
             //if yes call damage player on hit function in the companion AI script:
-            //collision.gameObject.GetComponent<CompanionAI>().DamagePlayerOnHit();
-        //}
+            collision.gameObject.GetComponent<CompanionAI>().DamagePlayerOnHit();
+        }
+
         //if collosion was not with enemy or companion, Destroy the projectile
         Destroy(gameObject);
     }

@@ -14,11 +14,13 @@ public class EnemyAI : MonoBehaviour
     public enum EnemyFacing { f, b}
     public EnemyFacing enemyDirection;
     // timer for shooting
-    public float shootTimer;
+    private float shootTimer;
     //check if child class is able to shoot
     //public bool canShoot = true;
-    //check if enemy is boss
-    public bool isBoss;
+    //check if enemy is boss or ranged
+    public bool isBoss, isRanged = false;
+    //ref to audio source
+    [SerializeField] private AudioSource rangedAttackSound, bossAttackSound;
 
     //State machine for enemy state 
     public enum EnemyAiSM { idle, chasing, shooting}
@@ -68,11 +70,21 @@ public class EnemyAI : MonoBehaviour
             //Shooting State
             case EnemyAiSM.shooting:
                 //Shoot projectiles on timer
-                if (shootTimer >= 1.0f)
+                if (shootTimer >= 1.5f)
                 {
-                    RangedAttack();
-
-                    shootTimer = 0f;
+                    if (isRanged == true)
+                    {
+                        rangedAttackSound.Play();
+                        RangedAttack();
+                        shootTimer = 0f;
+                    }
+                    if (isBoss == true)
+                    {
+                        bossAttackSound.Play();
+                        RangedAttack();
+                        shootTimer = 0f;
+                    }
+                   
                 }
                 else
                 {
@@ -100,12 +112,14 @@ public class EnemyAI : MonoBehaviour
         if (x < 0)
         {
             MoveRight(1);
+            //set enemy direction to forward
             enemyDirection = EnemyFacing.f;
         }
 
         else
         {
             MoveRight(-1);
+            //set enemy direction to backward
             enemyDirection = EnemyFacing.b;
         }
 
@@ -128,7 +142,7 @@ public class EnemyAI : MonoBehaviour
         backwards = Mathf.Clamp(backwards, -1, 1);
         //checking clamp works
         //Debug.Log(backwards);
-        //move forward along the X axis (Fowards = X = 1) (X, Y, Z)
+        //move forward along the X axis (Fowards = X = 1, backwards = -1) (X, Y, Z)
         transform.Translate(backwards * speed * Time.deltaTime, 0, 0);
        
     }
@@ -139,7 +153,7 @@ public class EnemyAI : MonoBehaviour
         upwards = Mathf.Clamp(upwards, -1, 1);
         //checking clamp works
         //Debug.Log(upwards);
-        //move forward along the Y axis (Fowards = X = 1) (X, Y, Z)
+        //move forward along the Y axis (Upwards = X = 1, downwards = -1) (X, Y, Z)
         transform.Translate(0, upwards * speed * Time.deltaTime, 0);
 
     }
@@ -147,18 +161,19 @@ public class EnemyAI : MonoBehaviour
     private void RangedAttack()
     {
         
-        
+        //set enemy projectile spawn point, depending on their facing direction
         switch (enemyDirection)
         {
                 case EnemyFacing.f:
-                    Instantiate(enemyProjectileObject, enemyProjectileSpawnPointF.transform.position, enemyProjectileSpawnPointF.transform.rotation);
-                    //canShoot = false;
-                    //Add delay here
-                    //canShoot = true;
+                //if facing foward, spawn projectile at foward spawn point
+                    Instantiate(enemyProjectileObject, enemyProjectileSpawnPointF.transform.position, 
+                        enemyProjectileSpawnPointF.transform.rotation);
                     break;
 
                 case EnemyFacing.b:
-                    Instantiate(enemyProjectileObject, enemyProjectileSpawnPointB.transform.position, enemyProjectileSpawnPointB.transform.rotation);
+                //if facing backwards, spawn projectile at back spawn point
+                Instantiate(enemyProjectileObject, enemyProjectileSpawnPointB.transform.position, 
+                    enemyProjectileSpawnPointB.transform.rotation);
                     break;
         }
       

@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         Debug.Log("GAMEOVER... RESTARTING LEVEL.....");
+        //re-load the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
     }
 

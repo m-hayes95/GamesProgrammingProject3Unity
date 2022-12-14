@@ -7,9 +7,10 @@ public class CompanionAI : MonoBehaviour
     //call animator
     public Animator followerAnimator;
     //reference to player to follow and for followers sprite
-    public GameObject player, followerSprite;
+    public GameObject followerSprite;
+    private GameObject player;
     //change speed to private TODO (public used for debugging)
-    public float speed;
+    private float speed = 5f;
     [SerializeField] private bool playerInsideRadius, companionInsideRadius = false;
     //value to apply damage to player when companion is hit by an enemy projectile
     public float damageToPlayer = 0.5f;
@@ -26,8 +27,10 @@ public class CompanionAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check if companion and player is inside the acceptance radius or not
         if (playerInsideRadius == false && companionInsideRadius == false)
         {
+            //if no then follow player
             FollowPlayer();
         }
 
@@ -97,17 +100,20 @@ public class CompanionAI : MonoBehaviour
             playerInsideRadius = true;
         }
 
+        //when companion enetes the acceptance radius
         if(other.gameObject.tag == "Companion")
         {
             Debug.Log("Companion too close...");
             companionInsideRadius = true;
         }
 
-        //If the game object tag is "enemy projectile" call Damage Player on hit function TODO!!!!
-        if(other.gameObject.tag == "EnemyProjectile")
-        {
-            DamagePlayerOnHit();
-        }
+        //Called in enemy projectile class instead
+
+        //If the game object tag is "enemy projectile" call Damage Player on hit function
+        //if(other.gameObject.tag == "EnemyProjectile")
+        //{
+            //DamagePlayerOnHit();
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -129,10 +135,13 @@ public class CompanionAI : MonoBehaviour
     public void DamagePlayerOnHit()
     {
         //apply damage to player using damageToPlayer variable
+
         Debug.Log("Companion Send damage to player");
+
         //Get temp ref to player script through game objet tag
         Player thePlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        //Call the damage player, when companions are hit, funciton
+        //when the companions are hit, call the function below on the player script,
+        //to reduce the player's health by the damage to player value
         thePlayer.WhenCompanionsHitTakeDamage(damageToPlayer);
     }
 }
