@@ -125,9 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followerAnimator: {fileID: 3156879643649691589}
-  player: {fileID: 0}
   followerSprite: {fileID: 4597411298409339018}
-  speed: 2
   playerInsideRadius: 0
   companionInsideRadius: 0
   damageToPlayer: 0.5
@@ -272,7 +270,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8432411104601872101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
