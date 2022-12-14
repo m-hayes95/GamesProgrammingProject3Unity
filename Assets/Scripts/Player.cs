@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myAnimator = GetComponent<Animator>();
+        //myAnimator = GetComponent<Animator>();
         speed = 10f;
         maxHealth = 30f;
         health = maxHealth;
@@ -50,10 +50,35 @@ public class Player : MonoBehaviour
         //set h and v to a new vector 3
         Vector3 inputFromPlayer = new Vector3(h, v, 0);
 
+        //set the running bool to true of false if the player is moving
+        if(h < 0)
+        {
+            //set running to true
+            myAnimator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            //player is idle set running to false 
+            myAnimator.SetBool("IsRunning", false);
+        }
+        if (v < 0)
+        {
+            //set running to true
+            myAnimator.SetBool("IsRunning", true);
+        }
+        else
+        {
+            //player is idle set running to false 
+            myAnimator.SetBool("IsRunning", false);
+        }
+       
+
         //use speed and time delt time to control speed
         transform.Translate(inputFromPlayer * speed * Time.deltaTime);
 
-        //myAnimator.SetBool("IsRunning", true);
+        //debug to check animator is assigning correctly
+        //Debug.Log(myAnimator + gameObject.name);
+        
 
         //check for direction of player to shoot in correct direction
         DirectionOfPlayer();
@@ -69,23 +94,8 @@ public class Player : MonoBehaviour
         {
             OnDeathGameOverScreen();
         }
-        
-        // Animator not not assigning and crashing game
 
-        // Only do the death animation once.
-        //myAnimator.SetBool("isDead", false);
-
-        // if (playedDeathAnimation == false)
-        //{
-            //if (Input.GetKeyDown("j"))
-            //{
-                //death of player
-
-                //myAnimator.SetBool("isDead", true);
-                //playedDeathAnimation = true;
-            //}
-
-        //}
+       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -130,7 +140,8 @@ public class Player : MonoBehaviour
             mySprite.transform.localScale = new Vector3(-1.7f,
                 mySprite.transform.localScale.y,
                 mySprite.transform.localScale.z);
-           
+            
+
 
         }
         if (h < 0)
@@ -141,15 +152,18 @@ public class Player : MonoBehaviour
                 mySprite.transform.localScale.y,
                 mySprite.transform.localScale.z);
             
+
         }
         //If we are facing North or South
         if (v > 0)
         {
             facing = Facing.n;
+            
         }
         if (v < 0)
         {
             facing = Facing.s;
+            
         }
     }
 
@@ -159,6 +173,8 @@ public class Player : MonoBehaviour
         switch (facing)
         {
             case Facing.e:
+                //play attack animation
+                myAnimator.SetTrigger("Attack");
                 //shoot from Spawn Point East
                 Instantiate(projectile, spawnPointE.transform.position, spawnPointE.transform.rotation);
                 //play shooting sound on attack
@@ -166,6 +182,8 @@ public class Player : MonoBehaviour
                 break;
 
             case Facing.w:
+                //play attack animation
+                myAnimator.SetTrigger("Attack");
                 //shoot from Spawn Point West
                 Instantiate(projectile, spawnPointW.transform.position, spawnPointW.transform.rotation);
                 //play shooting sound on attack
@@ -173,6 +191,8 @@ public class Player : MonoBehaviour
                 break;
            
             case Facing.n:
+                //play attack animation
+                myAnimator.SetTrigger("Attack");
                 //shoot from Spawn Point North
                 Instantiate(projectile, spawnPointN.transform.position, spawnPointN.transform.rotation);
                 //play shooting sound on attack
@@ -180,6 +200,8 @@ public class Player : MonoBehaviour
                 break;
 
             case Facing.s:
+                //play attack animation
+                myAnimator.SetTrigger("Attack");
                 //shoot from Spawn Point South
                 Instantiate(projectile, spawnPointS.transform.position, spawnPointS.transform.rotation);
                 //play shooting sound on attack
@@ -193,10 +215,13 @@ public class Player : MonoBehaviour
         //Call function when player health reaches 0 or below 0.
         //Open game over menu when created
         Debug.Log("Player Has Died");
-        //Restart level for now
+        
+        //call death animation on death
+        myAnimator.SetBool("IsDead", true);
+        //Destroy player actor after delay
+        Destroy(gameObject);
+        //Restart level for now, to change to Game over screen later TODO!!!
         gameManager.GetComponent<GameManager>().RestartLevel();
-        //Destroy player actor
-        Destroy(gameObject, 1f);
     }
 
     public void PlayerTakeDamage(float playerDamageAmount)
