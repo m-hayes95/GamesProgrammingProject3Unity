@@ -56,6 +56,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
     }
 
+    public void GameOverMenu()
+    {
+        //call game over meny
+    }
+
+    public void GameWinMenu()
+    {
+        //call game win menu
+    }
 
    
     
