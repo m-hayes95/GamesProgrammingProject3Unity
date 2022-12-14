@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject player, enemyProjectileObject;
     //spawn point for enemy projectile
     public Transform enemyProjectileSpawnPointF, enemyProjectileSpawnPointB;
-    //set to public for debugging, change to private TODO!!!
+    //declares speed variable, set in child class
     public float speed;
     //State machine for enemy direction
     public enum EnemyFacing { f, b}

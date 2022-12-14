@@ -18,6 +18,8 @@ public class EnemyBoss : EnemyAI
         player = GameObject.FindGameObjectWithTag("Player");
         //set is boss bool on parent class to true
         isBoss = true;
+        //set speed for boss
+        speed = 4f;
     }
 
     // Update is called once per frame

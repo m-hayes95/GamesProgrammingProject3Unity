@@ -17,6 +17,8 @@ public class Enemy1 : EnemyAI
         player = GameObject.FindGameObjectWithTag("Player");
         //set is ranged bool to true from parent class
         isRanged = true;
+        //set speed for enemy ranged 
+        speed = 3f;
     }
 
     // Update is called once per frame
