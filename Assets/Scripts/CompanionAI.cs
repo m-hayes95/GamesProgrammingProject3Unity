@@ -100,7 +100,7 @@ public class CompanionAI : MonoBehaviour
             playerInsideRadius = true;
         }
 
-        //when companion enetes the acceptance radius
+        //when companion enters the acceptance radius
         if(other.gameObject.tag == "Companion")
         {
             Debug.Log("Companion too close...");
