@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,32 +9,49 @@ public class CompanionAI : MonoBehaviour
     public Animator followerAnimator;
     //reference to player to follow and for followers sprite
     public GameObject followerSprite;
-    private GameObject player;
+    private GameObject player; 
     //change speed to private TODO (public used for debugging)
     private float speed = 5f;
     [SerializeField] private bool playerInsideRadius, companionInsideRadius = false;
     //value to apply damage to player when companion is hit by an enemy projectile
-    public float damageToPlayer = 0.5f;
+    private float damageToPlayer = 0.5f;
 
-    
+    //private CompanionAIVector2DistanceCheck companionAIVector2DistanceCheck; // Assign script to reference vector 2 distance. companionAIVector2DistanceCheck = GetComponent<CompanionAIVector2DistanceCheck>();
+    private float playerDistanceCheck = 2f;
+    private float distanceBetweenCompanionAndPlayer;
+    private const string PLAYER = "Player";
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        // Assign player ref
+        player = GameObject.FindGameObjectWithTag(PLAYER);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Assign the value of the vector 2 distance method to a variable and show value on console.
+        distanceBetweenCompanionAndPlayer = Vector2.Distance(player.transform.position, transform.position);
+        Debug.Log("Distance between Companion and Player = " + distanceBetweenCompanionAndPlayer);
+
+        // If vector2 distance value is more than the distance check, follow player.
+        if (distanceBetweenCompanionAndPlayer > playerDistanceCheck)
+        {
+            FollowPlayer();
+        }
+        
+
+
+        
+        /* -- removed with trigger enters for refactoring purposes
         //check if companion and player is inside the acceptance radius or not
         if (playerInsideRadius == false && companionInsideRadius == false)
         {
             //if no then follow player
             FollowPlayer();
         }
-
+        */
         
     }
 
@@ -90,7 +108,7 @@ public class CompanionAI : MonoBehaviour
         //Move forward along the Y axis * Speed and delta time
         transform.Translate(0, upwards * speed * Time.deltaTime, 0);
     }
-
+    /*
     private void OnTriggerEnter2D(Collider2D other)
     {
         //when player enters the acceptance radius
@@ -130,7 +148,7 @@ public class CompanionAI : MonoBehaviour
         {
             companionInsideRadius = false;
         }
-    }
+    } */
 
     public void DamagePlayerOnHit()
     {
