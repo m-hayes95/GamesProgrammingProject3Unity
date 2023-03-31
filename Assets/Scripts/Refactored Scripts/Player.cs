@@ -52,15 +52,10 @@ public class Player : MonoBehaviour
         // Use the player moveDir variable * speed and time delt time to move the player game object.
         transform.Translate(moveDir * speed * Time.deltaTime);
 
-        //Horizontal and vertical movement using input manager
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        //set h and v to a new vector 3
-        Vector3 inputFromPlayer = new Vector3(h, v, 0);
+        
 
         //set the running bool to true of false if the player is moving
-        if(h < 0)
+        if(moveDir.x > 0)
         {
             //set running to true
             myAnimator.SetBool("IsRunning", true);
@@ -70,7 +65,7 @@ public class Player : MonoBehaviour
             //player is idle set running to false 
             myAnimator.SetBool("IsRunning", false);
         }
-        if (v < 0)
+        if (moveDir.y > 0)
         {
             //set running to true
             myAnimator.SetBool("IsRunning", true);
@@ -92,20 +87,29 @@ public class Player : MonoBehaviour
         DirectionOfPlayer();
 
         /* OLD CODE BEFORE REFACTORING!
+        
+        //Horizontal and vertical movement using input manager
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        //set h and v to a new vector 3
+        Vector3 inputFromPlayer = new Vector3(h, v, 0);
+
         //Call fire function to shoot projectile
         if (Input.GetButtonDown("Jump"))
         {
             Fire();
         }
+        */
 
         //Call game over menu if player dies
         if (health <= 0)
         {
             OnDeathGameOverScreen();
         }
-        */
+        
 
-       
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
