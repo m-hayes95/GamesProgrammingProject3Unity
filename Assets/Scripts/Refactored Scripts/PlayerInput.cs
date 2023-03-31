@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField]
-    private Player player;
+    private Player player; // Ref for player fire method.
+    // Ref to player input actions.
     private PlayerInputActions playerInputActions;
 
     private void Awake()

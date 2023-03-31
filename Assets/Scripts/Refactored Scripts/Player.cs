@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Ref to player input script for player input vector2. 
     [SerializeField]
     private PlayerInput playerInput;
     //reference to the game manager script
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour
         // Use the player input script to get the vector 2 input for player movement
         Vector2 moveDir = playerInput.GetPlayerMovementVector2();
 
-        //use speed and time delt time to control speed
+        // Use the player moveDir variable * speed and time delt time to move the player game object.
         transform.Translate(moveDir * speed * Time.deltaTime);
 
         //Horizontal and vertical movement using input manager
