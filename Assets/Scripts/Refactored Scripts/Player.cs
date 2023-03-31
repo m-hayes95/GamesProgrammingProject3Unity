@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerInput playerInput;
     //reference to the game manager script
     public GameManager gameManager;
     //referecne to the player animator
@@ -43,6 +45,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Use the player input script to get the vector 2 input for player movement
+        Vector2 moveDir = playerInput.GetPlayerMovementVector2();
+
+        //use speed and time delt time to control speed
+        transform.Translate(moveDir * speed * Time.deltaTime);
+
         //Horizontal and vertical movement using input manager
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -73,8 +81,7 @@ public class Player : MonoBehaviour
         }
        
 
-        //use speed and time delt time to control speed
-        transform.Translate(inputFromPlayer * speed * Time.deltaTime);
+       
 
         //debug to check animator is assigning correctly
         //Debug.Log(myAnimator + gameObject.name);
@@ -83,6 +90,7 @@ public class Player : MonoBehaviour
         //check for direction of player to shoot in correct direction
         DirectionOfPlayer();
 
+        /* OLD CODE BEFORE REFACTORING!
         //Call fire function to shoot projectile
         if (Input.GetButtonDown("Jump"))
         {
@@ -94,6 +102,7 @@ public class Player : MonoBehaviour
         {
             OnDeathGameOverScreen();
         }
+        */
 
        
     }
@@ -167,7 +176,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Fire()
+    public void Fire()
     {
         //check which direction the player is facing, then spawn and fire the projectile in that direction
         switch (facing)

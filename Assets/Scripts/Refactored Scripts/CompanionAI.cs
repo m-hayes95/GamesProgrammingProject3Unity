@@ -41,8 +41,6 @@ public class CompanionAI : MonoBehaviour
             FollowPlayer();
         }
         
-
-
         
         /* -- removed with trigger enters for refactoring purposes
         //check if companion and player is inside the acceptance radius or not
@@ -108,7 +106,7 @@ public class CompanionAI : MonoBehaviour
         //Move forward along the Y axis * Speed and delta time
         transform.Translate(0, upwards * speed * Time.deltaTime, 0);
     }
-    /*
+    /* PREVIOUS CODE USED BEFORE REFACTOR!
     private void OnTriggerEnter2D(Collider2D other)
     {
         //when player enters the acceptance radius
