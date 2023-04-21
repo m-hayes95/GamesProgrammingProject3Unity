@@ -22,6 +22,7 @@ public class PlayerInput : MonoBehaviour
 
     public Vector2 GetPlayerMovementVector2()
     {
+        // Recieve the vector 2 reading from input action map and return the value.
         Vector2 inputVector2 = playerInputActions.Player.Movement.ReadValue<Vector2>();
         Debug.Log(inputVector2);
         return inputVector2;
@@ -35,5 +36,14 @@ public class PlayerInput : MonoBehaviour
         {
             player.Fire();
         }
+    }
+
+    private void OnEnable()
+    {
+        playerInputActions.Player.Enable();
+    }
+    private void OnDisable()
+    {
+        playerInputActions.Player.Disable();
     }
 }
