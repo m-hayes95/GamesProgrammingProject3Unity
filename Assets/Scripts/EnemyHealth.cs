@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     //enemy current health
     [SerializeField] private float enemyHealth;
     //reference to health pot
-    public GameObject healthPotDrop;
+    public GameObject healthPotDrop, followerDrop;
     //Referencing Enemy health bar class
     //public EnemyHealthBar healthBar;
     //ref to enemy hit sound
@@ -43,7 +43,7 @@ public class EnemyHealth : MonoBehaviour
         if (enemyHealth <= 0f)
         {
             //spawn a health pot when enemy is defeated by the player
-            Instantiate(healthPotDrop, transform.position, transform.rotation);
+            RandomChanceDrop();
             //call on enemy defeated function within the player class on enemy death
             eHPlayerRef.OnEnemyDefeated();
             
@@ -51,4 +51,10 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    private void RandomChanceDrop()
+    {
+        int rand = Random.Range(0, 2);
+        if (rand == 0) Instantiate(healthPotDrop, transform.position, transform.rotation);
+        else Instantiate(followerDrop, transform.position, transform.rotation);
+    }
 }

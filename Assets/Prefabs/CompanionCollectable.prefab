@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90beee7129b22d4fa1abf7fc48aaf68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  companionCollectedSound: {fileID: 0}
+  companionCollectedSound: {fileID: 3850522441932241659}
 --- !u!61 &1272193096634151277
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -128,7 +128,6 @@ MonoBehaviour:
   followerSprite: {fileID: 4597411298409339018}
   playerInsideRadius: 0
   companionInsideRadius: 0
-  damageToPlayer: 0.5
 --- !u!1 &4597411298409339018
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5283024659729311632
 Transform:
   m_ObjectHideFlags: 0

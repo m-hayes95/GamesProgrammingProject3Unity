@@ -397,6 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 0
   healthPotDrop: {fileID: 6029646677510444867, guid: 39d81a5f660564141925031194d9470f, type: 3}
+  followerDrop: {fileID: 1272193096634151276, guid: 5d03ef8f15f750549b2aec71aae7e3a1, type: 3}
   enemyHitSound: {fileID: 3995446030108982681}
 --- !u!114 &5206871528113864893
 MonoBehaviour:

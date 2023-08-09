@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //spawn ranged enemies at spawn point on a timer
-        if (spawnTimer >=5.0f)
+        if (spawnTimer >=4.0f)
         {
             Debug.Log("Ranged Enemy Spawning...");
             Instantiate(enemyRanged, enemyRangedSpawner.transform.position, enemyRangedSpawner.transform.rotation);

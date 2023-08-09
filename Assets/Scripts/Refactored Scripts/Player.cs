@@ -233,7 +233,7 @@ public class Player : MonoBehaviour
         //call death animation on death
         myAnimator.SetBool("IsDead", true);
         //Destroy player actor after delay
-        Destroy(gameObject);
+        //Destroy(gameObject);
         //Restart level for now, to change to Game over screen later TODO!!!
         gameManager.GetComponent<GameManager>().RestartLevel();
     }
@@ -270,7 +270,7 @@ public class Player : MonoBehaviour
     {
         enemiesDefeated++;
         //Call restart once all eneimes are defeated
-        if (enemiesDefeated >= 10)
+        if (enemiesDefeated >= 20)
         {
             //Change for different fucntion later TODO!!!
             OnDeathGameOverScreen();
